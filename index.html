@@ -428,7 +428,185 @@
   }
   .footer-logo span { color: var(--gold); font-family: 'Poppins', sans-serif; font-weight: 500; }
 
-  /* ── RESPONSIVE ── */
+  /* ── FLOW ── */
+  .flow { background: var(--ink); color: var(--white); }
+  .flow .section-label { color: var(--gold-l); }
+  .flow .section-label::before { background: var(--gold-l); }
+  .flow .section-title { color: var(--white); }
+  .flow .section-title-jp { color: rgba(255,255,255,0.3); }
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .flow-step {
+    background: #1A1816;
+    padding: 36px 28px 40px;
+    position: relative;
+    border-top: 2px solid #2A2720;
+    transition: border-color 0.3s;
+  }
+  .flow-step:hover { border-color: var(--gold); }
+  .flow-step-num {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-style: italic;
+    color: #2E2B25;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .flow-step-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .flow-step-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .flow-step-desc {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.9;
+  }
+  .flow-badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 10px;
+    border: 1px solid #2E2B25;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .flow-note {
+    margin-top: 48px;
+    padding: 28px 36px;
+    border: 1px solid #2A2720;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .flow-note-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .flow-note-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 2;
+  }
+  .flow-note-text strong {
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  /* ── WORKS ── */
+  .works { background: var(--white); }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .work-card {
+    background: var(--ghost);
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .work-card:hover { transform: translateY(-4px); }
+  .work-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+  }
+  .work-industry {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .work-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .work-desc {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 2;
+  }
+  .work-tag {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--light);
+    margin-right: 6px;
+  }
+
+  /* ── FLOW PRICE ── */
+  .flow-price {
+    margin-top: 28px;
+  }
+  .flow-price-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid #2A2720;
+    padding: 20px 36px;
+    flex-wrap: wrap;
+  }
+  .flow-price-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .flow-price-value {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .flow-price-value small {
+    font-size: 16px;
+  }
+  .flow-price-note {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .works-grid { grid-template-columns: 1fr; }
+    .flow-price-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     nav ul { display: none; }
@@ -466,6 +644,8 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#flow">Flow</a></li>
+    <li><a href="#works">Works</a></li>
     <li><a href="#profile">Profile</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -487,15 +667,15 @@
     <rect x="110" y="210" width="180" height="20" fill="#B89A6A"/>
   </svg>
   <div class="hero-content">
-    <p class="hero-eyebrow">AIサポート・コンサルティング</p>
-    <h1 class="hero-title">間合いを知る、</h1>
-    <h1 class="hero-title-en">AI for growth.</h1>
+    <p class="hero-eyebrow">個人・スモールビジネス向け AI サポート</p>
+    <h1 class="hero-title">試してから、<br>決めればいい。</h1>
+    <h1 class="hero-title-en">AI, at your pace.</h1>
     <p class="hero-sub">
-      新規事業の立ち上げから業務効率化まで、<br>
-      AIを使った伴走支援で、あなたのビジネスを<br>
-      ともに前へ進めます。
+      まずはテキストでご相談（無料）。<br>
+      Google Meet で提案・レクチャー、<br>
+      分単位の明朗会計でAIをあなたの現場へ。
     </p>
-    <a href="#contact" class="btn-primary">お問い合わせ</a>
+    <a href="#flow" class="btn-primary">ご利用の流れ</a>
   </div>
 </section>
 
@@ -530,9 +710,9 @@
     <h2 class="section-title reveal">AIと共に、<br>事業の現場へ。</h2>
     <p class="section-title-jp reveal">Partnering with AI, side by side.</p>
     <div class="reveal">
-      <p>MaAI-techは、AIを活用した新規事業の伴走支援と業務効率化サポートに特化したコンサルティングです。</p>
-      <p>「間合い」という日本の概念を軸に、クライアントそれぞれのペースと状況に合わせた、的確で無駄のない支援を提供します。</p>
-      <p>大きな組織ではなく、一人のプロフェッショナルが直接関わることで、スピーディかつ柔軟に対応します。</p>
+      <p>MaAI-techは、個人・フリーランス・小規模チームのための、身の丈に合ったAI支援サービスです。</p>
+      <p>「まず試したい」「どこから始めればいいかわからない」という方を対象に、PoCフェーズ（検証・実験）までを中心にサポートします。大きな契約は不要。必要な分だけ、必要なときに。</p>
+      <p>「間合い」の哲学のとおり、押しつけず、焦らせず。あなたのペースでAI活用を前進させます。</p>
     </div>
     <div class="gold-rule reveal" style="margin-top:40px;"></div>
   </div>
@@ -581,6 +761,96 @@
   </div>
 </section>
 
+<!-- ── FLOW ── -->
+<section class="flow" id="flow">
+  <p class="section-label reveal">How it works</p>
+  <h2 class="section-title reveal">ご利用の流れ</h2>
+  <p class="section-title-jp reveal">Simple, transparent, flexible.</p>
+  <div class="flow-grid">
+    <div class="flow-step reveal">
+      <div class="flow-step-num">01</div>
+      <span class="flow-step-tag">Free</span>
+      <div class="flow-step-title">テキストで<br>事前相談</div>
+      <p class="flow-step-desc">メールやフォームで現状・やりたいことをご連絡ください。テキストベースで内容を確認します。</p>
+      <span class="flow-badge">完全無料</span>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-step-num">02</div>
+      <span class="flow-step-tag">Quote</span>
+      <div class="flow-step-title">時間単位で<br>お見積もり</div>
+      <p class="flow-step-desc">内容を確認後、必要な時間をご提示。プロジェクト一括ではなく、時間単位の明朗会計です。</p>
+      <span class="flow-badge">時間単位</span>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-step-num">03</div>
+      <span class="flow-step-tag">Meet</span>
+      <div class="flow-step-title">Google Meet で<br>提案・レクチャー</div>
+      <p class="flow-step-desc">画面共有しながらリアルタイムで提案・ハンズオン。その場で動かして、感触をつかんでいただきます。</p>
+      <span class="flow-badge">オンライン完結</span>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-step-num">04</div>
+      <span class="flow-step-tag">Billing</span>
+      <div class="flow-step-title">分単位で<br>ご請求</div>
+      <p class="flow-step-desc">実際にかかった時間を分単位で算出してご請求。余分な費用は一切発生しません。</p>
+      <span class="flow-badge">分単位精算</span>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-step-num">05</div>
+      <span class="flow-step-tag">Support</span>
+      <div class="flow-step-title">その後も<br>サポート</div>
+      <p class="flow-step-desc">不明点があれば再度 Google Meet またはメールで対応。追加サポートは5分単位での請求です。</p>
+      <span class="flow-badge">5分単位〜</span>
+    </div>
+  </div>
+  <div class="flow-note reveal">
+    <div class="flow-note-icon">💡</div>
+    <p class="flow-note-text">
+      MaAI-techは<strong>PoCフェーズ（検証・実験）</strong>を中心に支援します。「まず小さく試す」ことで、失敗コストを最小化。うまくいったら次のステップへ。個人・フリーランス・小規模チームの方に最適な、<strong>使った分だけ払うAI支援</strong>です。
+    </p>
+  </div>
+  <div class="flow-price reveal">
+    <div class="flow-price-inner">
+      <span class="flow-price-label">料金目安</span>
+      <span class="flow-price-value">最大 ¥10,000<small> / h</small></span>
+      <span class="flow-price-note">※ 2026年6月現在。案件によって前後します。分単位・5分単位で精算。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── WORKS ── -->
+<section class="works" id="works">
+  <p class="section-label reveal">Works</p>
+  <h2 class="section-title reveal">支援実績</h2>
+  <p class="section-title-jp reveal">Case studies</p>
+  <div class="works-grid">
+    <div class="work-card reveal">
+      <span class="work-industry">Beauty / SME</span>
+      <div class="work-title">美容系中小企業<br>電子契約 自動送信フロー構築</div>
+      <p class="work-desc">業務委託契約における電子契約の締結プロセスを分析し、AIを活用した自動送信フローを設計・構築。担当者の手作業を大幅に削減し、契約締結までのリードタイムを短縮しました。</p>
+      <span class="work-tag">業務効率化</span>
+      <span class="work-tag">電子契約</span>
+      <span class="work-tag">フロー自動化</span>
+    </div>
+    <div class="work-card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--white); border: 1px solid var(--border);">
+      <svg width="48" height="55" viewBox="0 0 40 46" fill="none" style="margin-bottom:20px; opacity:0.2;">
+        <rect x="0" y="0" width="40" height="4" fill="#0F0F0F"/>
+        <rect x="0" y="0" width="4" height="46" fill="#0F0F0F"/>
+        <rect x="36" y="0" width="4" height="46" fill="#0F0F0F"/>
+        <rect x="0" y="42" width="12" height="4" fill="#0F0F0F"/>
+        <rect x="28" y="42" width="12" height="4" fill="#0F0F0F"/>
+        <rect x="12" y="10" width="16" height="3" fill="#B89A6A"/>
+        <rect x="12" y="33" width="16" height="3" fill="#B89A6A"/>
+        <rect x="12" y="10" width="3" height="26" fill="#B89A6A"/>
+        <rect x="25" y="10" width="3" height="26" fill="#B89A6A"/>
+        <rect x="12" y="21" width="16" height="3" fill="#B89A6A"/>
+      </svg>
+      <p style="font-family:'Noto Serif JP',serif; font-size:14px; font-weight:300; color:var(--light); line-height:2;">随時更新中。<br>あなたの事例が、<br>ここに載るかもしれません。</p>
+      <a href="#contact" class="btn-primary" style="margin-top:24px; font-size:11px; padding:10px 24px;">相談してみる</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── PROFILE ── -->
 <section class="profile" id="profile">
   <p class="section-label reveal">Profile</p>
@@ -602,14 +872,13 @@
 <!-- ── CONTACT ── -->
 <section class="contact" id="contact">
   <p class="section-label reveal" style="justify-content:center;">Contact</p>
-  <h2 class="section-title reveal">お問い合わせ</h2>
-  <p class="section-title-jp reveal" style="text-align:center;">Get in touch</p>
+  <h2 class="section-title reveal">まず、話だけでも。</h2>
+  <p class="section-title-jp reveal" style="text-align:center;">最初のご相談は無料です。テキストで気軽にどうぞ。</p>
   <div class="contact-box reveal">
     <div class="contact-item">
       <span class="contact-label">Email</span>
-      <a href="mailto:koinuma@maai-tech.com" class="contact-value">koinuma@maai-tech.com</a>
+      <a href="mailto:info@maai-tech.com" class="contact-value">info@maai-tech.com</a>
     </div>
-
   </div>
 </section>
 
