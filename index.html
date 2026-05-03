@@ -1,3 +1,6 @@
+Index · HTML
+コピー
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,18 +28,18 @@
     --ghost:  #F7F5F1;
     --border: #E8E4DC;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: 'Poppins', sans-serif;
     background: var(--white);
     color: var(--ink);
     overflow-x: hidden;
   }
-
+ 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(32px); }
@@ -59,7 +62,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -101,7 +104,7 @@
     transition: color 0.2s;
   }
   nav ul a:hover { color: var(--gold); }
-
+ 
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
@@ -186,7 +189,7 @@
     color: var(--white);
   }
   .btn-primary::after { content: '→'; }
-
+ 
   /* ── SECTION BASE ── */
   section { padding: 120px 60px; }
   .section-label {
@@ -219,7 +222,7 @@
     letter-spacing: 0.15em;
     margin-bottom: 40px;
   }
-
+ 
   /* ── ABOUT ── */
   .about {
     background: var(--white);
@@ -245,7 +248,7 @@
   .mark-large {
     animation: rotateMark 1s ease 0.4s both;
   }
-
+ 
   /* ── SERVICES ── */
   .services { background: var(--ghost); }
   .services-grid {
@@ -300,7 +303,7 @@
     line-height: 2;
     color: var(--mid);
   }
-
+ 
   /* ── PHILOSOPHY ── */
   .philosophy {
     background: var(--ink);
@@ -339,7 +342,7 @@
     opacity: 0.04;
     pointer-events: none;
   }
-
+ 
   /* ── PROFILE ── */
   .profile { background: var(--white); }
   .profile-inner {
@@ -384,7 +387,7 @@
     line-height: 2.2;
     color: var(--mid);
   }
-
+ 
   /* ── CONTACT ── */
   .contact {
     background: var(--ghost);
@@ -418,7 +421,7 @@
     width: 1px; height: 40px;
     background: var(--border);
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     background: var(--ink);
@@ -436,7 +439,7 @@
     font-size: 16px;
   }
   .footer-logo span { color: var(--gold); font-family: 'Poppins', sans-serif; font-weight: 500; }
-
+ 
   /* ── FLOW ── */
   .flow { background: var(--ink); color: var(--white); }
   .flow .section-label { color: var(--gold-l); }
@@ -520,7 +523,7 @@
     color: var(--gold);
     font-weight: 400;
   }
-
+ 
   /* ── WORKS ── */
   .works { background: var(--white); }
   .works-grid {
@@ -577,7 +580,7 @@
     color: var(--light);
     margin-right: 6px;
   }
-
+ 
   /* ── FLOW PRICE ── */
   .flow-price {
     margin-top: 28px;
@@ -611,7 +614,7 @@
     color: rgba(255,255,255,0.3);
     line-height: 1.8;
   }
-
+ 
   /* ── CONTACT FORM ── */
   .contact-form {
     max-width: 640px;
@@ -686,7 +689,7 @@
     color: var(--gold);
     margin-top: 24px;
   }
-
+ 
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     nav ul { display: none; }
@@ -709,7 +712,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- ── NAV ── -->
 <nav>
   <a href="#" class="nav-logo">
@@ -740,7 +743,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- ── HERO ── -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
@@ -768,7 +771,7 @@
     <a href="#flow" class="btn-primary">ご利用の流れ</a>
   </div>
 </section>
-
+ 
 <!-- ── PHILOSOPHY ── -->
 <section class="philosophy" id="philosophy">
   <svg class="philosophy-ghost" width="500" height="560" viewBox="0 0 400 460" fill="none">
@@ -792,7 +795,7 @@
     間合いを知ることが、勝負を決める。
   </p>
 </section>
-
+ 
 <!-- ── ABOUT ── -->
 <section class="about" id="about">
   <div class="about-text">
@@ -823,7 +826,7 @@
     </svg>
   </div>
 </section>
-
+ 
 <!-- ── SERVICES ── -->
 <section class="services" id="services">
   <p class="section-label reveal">Services</p>
@@ -850,7 +853,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── FLOW ── -->
 <section class="flow" id="flow">
   <p class="section-label reveal">How it works</p>
@@ -907,7 +910,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── WORKS ── -->
 <section class="works" id="works">
   <p class="section-label reveal">Works</p>
@@ -940,7 +943,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── PROFILE ── -->
 <section class="profile" id="profile">
   <p class="section-label reveal">Profile</p>
@@ -957,13 +960,13 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ── CONTACT ── -->
 <section class="contact" id="contact">
   <p class="section-label reveal" style="justify-content:center;">Contact</p>
   <h2 class="section-title reveal">まず、話だけでも。</h2>
   <p class="section-title-jp reveal" style="text-align:center;">最初のご相談は無料です。お気軽にご記入ください。</p>
-
+ 
   <form class="contact-form reveal" id="contactForm">
     <div class="form-group">
       <label class="form-label" for="cf-name">お名前<span>*</span></label>
@@ -998,13 +1001,13 @@
     </div>
   </form>
 </section>
-
+ 
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">Ma<span>AI</span>-tech</div>
   <div>© 2026 MaAI-tech. All rights reserved.</div>
 </footer>
-
+ 
 <script>
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
@@ -1022,9 +1025,9 @@
       }
     });
   }, { threshold: 0.15 });
-
+ 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+ 
   // Contact form → mailto
   const form = document.getElementById('contactForm');
   if (form) {
@@ -1047,3 +1050,4 @@
 </script>
 </body>
 </html>
+ 
