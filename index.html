@@ -558,7 +558,78 @@
     font-weight: 400;
   }
 
-  /* ── WORKS ── */
+  /* ── THEMES ── */
+  .themes { background: var(--white); }
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 48px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .theme-item {
+    background: var(--white);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.2s;
+    position: relative;
+  }
+  .theme-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.3s ease;
+  }
+  .theme-item:hover::before { height: 100%; }
+  .theme-item:hover { transform: translateY(-2px); }
+  .theme-num {
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+  .theme-body { flex: 1; }
+  .theme-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .theme-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .theme-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    color: var(--mid);
+    letter-spacing: 0.04em;
+  }
+  .themes-note {
+    text-align: center;
+    margin-top: 36px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 768px) {
+    .themes-grid { grid-template-columns: 1fr; }
+  }
   .works { background: var(--white); }
   .works-grid {
     display: grid;
@@ -789,6 +860,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#flow">Flow</a></li>
+    <li><a href="#themes">Expertise</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#profile">Profile</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -960,6 +1032,84 @@
       <span class="flow-price-note">※ 2026年6月現在。案件によって前後します。分単位・5分単位で精算。</span>
     </div>
   </div>
+</section>
+
+<!-- ── THEMES ── -->
+<section class="themes" id="themes">
+  <p class="section-label reveal">Expertise</p>
+  <h2 class="section-title reveal">得意テーマ一覧</h2>
+  <p class="section-title-jp reveal">What we do best</p>
+  <div class="themes-grid reveal">
+    <div class="theme-item">
+      <div class="theme-num">01</div>
+      <div class="theme-body">
+        <div class="theme-title">業務自動化</div>
+        <div class="theme-tags">
+          <span class="theme-tag">電子契約の自動送信</span>
+          <span class="theme-tag">受発注フロー</span>
+          <span class="theme-tag">メール一括処理</span>
+          <span class="theme-tag">Google Apps Script</span>
+        </div>
+      </div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-num">02</div>
+      <div class="theme-body">
+        <div class="theme-title">ナレッジ管理</div>
+        <div class="theme-tags">
+          <span class="theme-tag">社内検索基盤の構築</span>
+          <span class="theme-tag">PDF・Excel整理</span>
+          <span class="theme-tag">属人化の解消</span>
+        </div>
+      </div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-num">03</div>
+      <div class="theme-body">
+        <div class="theme-title">AI活用支援</div>
+        <div class="theme-tags">
+          <span class="theme-tag">ChatGPT / Claude</span>
+          <span class="theme-tag">Google Gemini</span>
+          <span class="theme-tag">Microsoft Copilot</span>
+          <span class="theme-tag">プロンプト設計</span>
+        </div>
+      </div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-num">04</div>
+      <div class="theme-body">
+        <div class="theme-title">新規事業 PoC</div>
+        <div class="theme-tags">
+          <span class="theme-tag">アイデア検証</span>
+          <span class="theme-tag">フロー設計</span>
+          <span class="theme-tag">小さく試す伴走</span>
+        </div>
+      </div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-num">05</div>
+      <div class="theme-body">
+        <div class="theme-title">Google Workspace 活用</div>
+        <div class="theme-tags">
+          <span class="theme-tag">Sheets / Forms 連携</span>
+          <span class="theme-tag">GAS自動化</span>
+          <span class="theme-tag">Gemini 組み込み</span>
+        </div>
+      </div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-num">06</div>
+      <div class="theme-body">
+        <div class="theme-title">個人向け AI 相談</div>
+        <div class="theme-tags">
+          <span class="theme-tag">会社がAI予算を出してくれない方</span>
+          <span class="theme-tag">何から始めるかわからない方</span>
+          <span class="theme-tag">初回無料・分単位精算</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="themes-note reveal">↓ 実際の支援事例はこちら</p>
 </section>
 
 <!-- ── WORKS ── -->
