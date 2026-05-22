@@ -1242,7 +1242,7 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Contact form → mailto
+  // Contact form → mailto + GA4 event
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function(e) {
@@ -1256,6 +1256,16 @@
       const body    = encodeURIComponent(
         `お名前：${name}\n会社名：${company || '（個人）'}\nメール：${email}\nご相談種類：${type}\n\n【ご相談内容】\n${detail}`
       );
+
+      // GA4 コンバージョンイベント
+      if (typeof gtag === 'function') {
+        gtag('event', 'contact_form_submit', {
+          'event_category': 'contact',
+          'event_label': type || 'form',
+          'value': 1
+        });
+      }
+
       window.location.href = `mailto:info@maai-tech.com?subject=${subject}&body=${body}`;
       document.getElementById('formSuccess').style.display = 'block';
       form.reset();
