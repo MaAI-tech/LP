@@ -1247,33 +1247,67 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Contact form → mailto + GA4 event
+  // Contact form → Web3Forms（確実にメールを送信）+ GA4イベント
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中...';
+      }
+
       const name    = document.getElementById('cf-name').value;
       const company = document.getElementById('cf-company').value;
       const email   = document.getElementById('cf-email').value;
       const type    = document.getElementById('cf-type').value;
       const detail  = document.getElementById('cf-detail').value;
-      const subject = encodeURIComponent(`【MaAI-tech ご相談】${type} — ${name}`);
-      const body    = encodeURIComponent(
-        `お名前：${name}\n会社名：${company || '（個人）'}\nメール：${email}\nご相談種類：${type}\n\n【ご相談内容】\n${detail}`
-      );
 
-      // GA4 コンバージョンイベント
-      if (typeof gtag === 'function') {
-        gtag('event', 'contact_form_submit', {
-          'event_category': 'contact',
-          'event_label': type || 'form',
-          'value': 1
+      const formData = {
+        access_key: "4be7fcfc-b65e-4c09-a5c0-d97eb368da93",
+        subject: `【MaAI-tech ご相談】${type} — ${name}`,
+        from_name: "MaAI-tech HP",
+        お名前: name,
+        会社名: company || "（個人）",
+        メールアドレス: email,
+        ご相談種類: type,
+        ご相談内容: detail,
+        replyto: email
+      };
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
         });
-      }
+        const result = await response.json();
 
-      window.location.href = `mailto:info@maai-tech.com?subject=${subject}&body=${body}`;
-      document.getElementById('formSuccess').style.display = 'block';
-      form.reset();
+        if (result.success) {
+          // GA4 コンバージョンイベント
+          if (typeof gtag === 'function') {
+            gtag('event', 'contact_form_submit', {
+              'event_category': 'contact',
+              'event_label': type || 'form',
+              'value': 1
+            });
+          }
+          document.getElementById('formSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          alert('送信に失敗しました。お手数ですが info@maai-tech.com まで直接ご連絡ください。');
+        }
+      } catch (error) {
+        alert('送信に失敗しました。お手数ですが info@maai-tech.com まで直接ご連絡ください。');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }
     });
   }
 </script>
