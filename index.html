@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>MaAI-tech | AI業務効率化・新規事業伴走支援｜個人・小規模企業向け</title>
-<meta name="description" content="AIを活用した業務効率化・新規事業のPoC支援。電子契約自動化・ナレッジ基盤構築・受発注自動化など実績多数。初回相談無料、分単位の明朗会計。個人・フリーランス・小規模チーム向けAIコンサルのMaAI-tech。">
-<meta name="keywords" content="AI業務効率化,AI新規事業,AIコンサル,PoC支援,業務自動化,電子契約自動化,AI導入支援,フリーランスAI,ChatGPT活用,Claude活用,小規模企業AI,MaAI-tech">
+<title>MaAI-tech | 業務をAIで回す｜AI業務オペレーション支援（AI-BizOps）</title>
+<meta name="description" content="あなたの業務、AIで回す。個人・小規模チーム向けのAI業務オペレーション支援（AI-BizOps）。メール・受発注・電子契約の自動化、社内検索による属人化解消を、単発実装と月次伴走の両輪で支援。初回相談無料・分単位の明朗会計。">
+<meta name="keywords" content="AI-BizOps,AI業務自動化,業務効率化,属人化解消,社内検索,RAG,AI導入支援,AI顧問,月次伴走,電子契約自動化,ChatGPT活用,Claude活用,小規模企業AI,MaAI-tech">
 <meta name="author" content="MaAI-tech 肥沼 竜平">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maai-tech.com/">
@@ -15,15 +15,15 @@
 <!-- OGP（SNSシェア時の表示） -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maai-tech.com/">
-<meta property="og:title" content="MaAI-tech | AI業務効率化・新規事業伴走支援">
-<meta property="og:description" content="AIを使った業務効率化・新規事業のPoC支援。初回相談無料、分単位の明朗会計。個人・フリーランス・小規模チーム向け。">
+<meta property="og:title" content="MaAI-tech | あなたの業務、AIで回す（AI-BizOps）">
+<meta property="og:description" content="個人・小規模チームのためのAI業務オペレーション支援。自動化・属人化解消を単発実装と月次伴走の両輪で。初回相談無料・分単位の明朗会計。">
 <meta property="og:site_name" content="MaAI-tech">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MaAI-tech | AI業務効率化・新規事業伴走支援">
-<meta name="twitter:description" content="AIを使った業務効率化・新規事業のPoC支援。初回相談無料、分単位の明朗会計。">
+<meta name="twitter:title" content="MaAI-tech | あなたの業務、AIで回す（AI-BizOps）">
+<meta name="twitter:description" content="個人・小規模チーム向けのAI業務オペレーション支援。自動化・属人化解消を単発実装と月次伴走の両輪で。初回相談無料・分単位の明朗会計。">
 <meta name="twitter:site" content="@maai_tech">
 
 <!-- 構造化データ（Googleの検索結果を豊かにする） -->
@@ -32,12 +32,12 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "MaAI-tech",
-  "description": "AIを活用した業務効率化・新規事業伴走支援。個人・小規模企業向けAIコンサルティング。",
+  "description": "あなたの業務、AIで回す。個人・小規模チーム向けのAI業務オペレーション支援（AI-BizOps）。自動化・属人化解消を単発実装と月次伴走の両輪で支援。",
   "url": "https://maai-tech.com",
   "email": "info@maai-tech.com",
   "founder": { "@type": "Person", "name": "肥沼 竜平" },
   "areaServed": "JP",
-  "serviceType": ["AI業務効率化", "新規事業PoC支援", "AIコンサルティング"],
+  "serviceType": ["AI業務オペレーション支援（AI-BizOps）", "AI業務自動化", "属人化解消・社内検索構築", "月次AI顧問"],
   "priceRange": "〜¥10,000/h"
 }
 </script>
@@ -512,88 +512,99 @@
   }
   .footer-logo span { color: var(--gold); font-family: 'Poppins', sans-serif; font-weight: 500; }
 
-  /* ── FLOW ── */
-  .flow { background: var(--ink); color: var(--white); }
-  .flow .section-label { color: var(--gold-l); }
-  .flow .section-label::before { background: var(--gold-l); }
-  .flow .section-title { color: var(--white); }
-  .flow .section-title-jp { color: rgba(255,255,255,0.3); }
-  .flow-grid {
+  /* ── FLOW (process stepper, OWNDAYS-style) ── */
+  .flow { background: var(--ghost); }
+  .flow-steps {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2px;
-    margin-top: 60px;
+    gap: 12px;
+    margin-top: 56px;
   }
-  .flow-step {
-    background: #1A1816;
-    padding: 36px 28px 40px;
-    position: relative;
-    border-top: 2px solid #2A2720;
-    transition: border-color 0.3s;
+  .fstep {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 22px;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
   }
-  .flow-step:hover { border-color: var(--gold); }
-  .flow-step-num {
+  .fstep.paid { border-color: var(--gold); }
+  .fstep:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(184,154,106,0.12); }
+  .fstep-badge {
+    display: none;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 11px; font-weight: 600;
+    padding: 3px 11px; border-radius: 999px;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border);
+  }
+  .fstep-badge.free { background: var(--ghost); color: var(--mid); }
+  .fstep-badge.paid { background: #FBF6EC; color: var(--gold); border-color: var(--gold-l); }
+  .fstep-num {
     font-family: 'Lora', serif;
-    font-size: 36px;
-    font-style: italic;
-    color: #2E2B25;
-    line-height: 1;
-    margin-bottom: 20px;
+    font-size: 13px; font-style: italic; color: var(--gold);
+    letter-spacing: 0.12em; margin-bottom: 14px;
   }
-  .flow-step-tag {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-    display: block;
-  }
-  .flow-step-title {
+  .fstep-title {
     font-family: 'Noto Serif JP', serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 14px;
-    line-height: 1.5;
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    line-height: 1.45; margin-bottom: 12px;
   }
-  .flow-step-desc {
+  .fstep-desc {
     font-family: 'Noto Serif JP', serif;
-    font-size: 12px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.9;
+    font-size: 12.5px; font-weight: 300; color: var(--mid); line-height: 1.85;
   }
-  .flow-badge {
-    display: inline-block;
+  /* bracket grouping (無料 / 有料) */
+  .flow-brackets {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
     margin-top: 14px;
-    padding: 4px 10px;
-    border: 1px solid #2E2B25;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--gold);
   }
-  .flow-note {
-    margin-top: 48px;
-    padding: 28px 36px;
-    border: 1px solid #2A2720;
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  .flow-bracket { text-align: center; }
+  .flow-bracket.free { grid-column: 1 / 3; }
+  .flow-bracket.paid { grid-column: 3 / 6; }
+  .flow-bracket-line {
+    height: 10px;
+    border: 1.5px solid var(--gold);
+    border-bottom: none;
+    border-top-left-radius: 4px; border-top-right-radius: 4px;
+    margin-bottom: 12px;
   }
-  .flow-note-icon {
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .flow-note-text {
+  .flow-bracket.free .flow-bracket-line { border-color: var(--light); }
+  .flow-bracket-label {
     font-family: 'Noto Serif JP', serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
-    line-height: 2;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.08em;
   }
-  .flow-note-text strong {
-    color: var(--gold);
-    font-weight: 400;
+  .flow-bracket.free .flow-bracket-label { color: var(--mid); }
+  .flow-bracket.paid .flow-bracket-label { color: var(--gold); }
+  /* pricing table */
+  .flow-price2 { margin-top: 48px; max-width: 760px; }
+  .price-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 18px 26px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    margin-bottom: 8px;
+  }
+  .price-row.muted { border-left-color: var(--border); }
+  .price-label {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px; font-weight: 600; color: var(--ink);
+  }
+  .price-label small {
+    display: block; font-size: 12px; font-weight: 300; color: var(--mid); margin-top: 4px;
+  }
+  .price-value {
+    font-family: 'Lora', serif;
+    font-size: 24px; color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  }
+  .price-value.free { color: var(--mid); font-style: italic; font-size: 20px; }
+  .price-value.quote { font-size: 17px; font-family: 'Noto Serif JP', serif; }
+  .price-note {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px; color: var(--light); margin-top: 16px; line-height: 1.85;
   }
 
   /* ── THEMES ── */
@@ -601,60 +612,56 @@
   .themes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    margin-top: 48px;
-    background: var(--border);
-    border: 1px solid var(--border);
+    gap: 18px;
+    margin-top: 52px;
   }
   .theme-item {
     background: var(--white);
-    padding: 32px 28px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 34px 30px 30px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    transition: transform 0.2s;
-    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   }
-  .theme-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.3s ease;
+  .theme-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-l);
+    box-shadow: 0 14px 34px rgba(184,154,106,0.13);
   }
-  .theme-item:hover::before { height: 100%; }
-  .theme-item:hover { transform: translateY(-2px); }
+  .theme-icon {
+    width: 46px; height: 46px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--gold-l);
+    border-radius: 50%;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  .theme-icon svg {
+    width: 22px; height: 22px;
+    stroke: currentColor; stroke-width: 1.6; fill: none;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
   .theme-num {
     font-family: 'Lora', serif;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--gold);
-    letter-spacing: 0.08em;
+    font-size: 12px; font-style: italic;
+    color: var(--gold); letter-spacing: 0.14em;
+    margin-bottom: 8px;
   }
-  .theme-body { flex: 1; }
   .theme-title {
     font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    font-size: 18px; font-weight: 600; color: var(--ink);
+    line-height: 1.4; margin-bottom: 14px;
+    padding-bottom: 14px; position: relative;
   }
-  .theme-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+  .theme-title::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 28px; height: 2px; background: var(--gold);
   }
-  .theme-tag {
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    padding: 3px 10px;
-    border: 1px solid var(--border);
-    color: var(--mid);
-    letter-spacing: 0.04em;
+  .theme-desc {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px; font-weight: 300; color: var(--mid);
+    line-height: 1.95;
   }
   .themes-note {
     text-align: center;
@@ -668,77 +675,162 @@
   @media (max-width: 768px) {
     .themes-grid { grid-template-columns: 1fr; }
   }
-  .works { background: var(--white); }
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-  }
-  .work-card {
-    background: var(--ghost);
-    padding: 48px 44px;
+  /* ── WORKS (auto-scroll marquee) ── */
+  .works { background: var(--white); overflow: hidden; }
+  .works > .section-label,
+  .works > .section-title,
+  .works > .section-title-jp { padding-left: 60px; }
+  .works-marquee {
+    margin-top: 52px;
     position: relative;
-    overflow: hidden;
-    transition: transform 0.3s;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   }
-  .work-card:hover { transform: translateY(-4px); }
-  .work-card::before {
+  .works-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    padding: 4px 60px;
+    animation: worksScroll 64s linear infinite;
+  }
+  .works-marquee:hover .works-track { animation-play-state: paused; }
+  @keyframes worksScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50% - 12px)); }
+  }
+  .work-mini {
+    flex: 0 0 360px;
+    width: 360px;
+    background: var(--ghost);
+    border: 1px solid var(--border);
+    padding: 32px 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .work-mini::before {
     content: '';
-    position: absolute;
-    top: 0; left: 0;
+    position: absolute; top: 0; left: 0;
     width: 3px; height: 100%;
     background: var(--gold);
   }
-  .work-industry {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: block;
+  .work-mini:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-l);
+    box-shadow: 0 12px 30px rgba(184,154,106,0.12);
   }
-  .work-title {
-    font-family: 'Noto Serif JP', 'Lora', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 16px;
-    line-height: 1.4;
+  .work-mini-industry {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
   }
-  .work-desc {
+  .work-mini-title {
     font-family: 'Noto Serif JP', serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--mid);
-    line-height: 2;
+    font-size: 17px; font-weight: 600; color: var(--ink);
+    line-height: 1.5; margin-bottom: 14px;
   }
-  .work-tag {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 5px 12px;
-    border: 1px solid var(--border);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--light);
-    margin-right: 6px;
+  .work-mini-desc {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px; font-weight: 300; color: var(--mid);
+    line-height: 1.95; flex: 1; margin-bottom: 18px;
   }
-  .work-time {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--light);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.06em;
+  .work-mini-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; border-top: 1px solid var(--border);
   }
-  .work-time-value {
-    color: var(--gold);
-    font-weight: 400;
+  .work-mini-time { font-size: 11px; color: var(--light); letter-spacing: 0.05em; }
+  .work-mini-time b { color: var(--gold); font-weight: 400; }
+  .work-mini-more {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+  }
+  .work-mini-more::after { content: ' +'; }
+
+  /* ── WORK MODAL ── */
+  .work-modal {
+    position: fixed; inset: 0; z-index: 200;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(15,15,15,0.6); backdrop-filter: blur(4px);
+    padding: 24px;
+  }
+  .work-modal.open { display: flex; }
+  .work-modal-box {
+    background: var(--white);
+    max-width: 640px; width: 100%;
+    max-height: 86vh; overflow-y: auto;
+    padding: 56px 52px; position: relative;
+    border-top: 3px solid var(--gold);
+    animation: fadeUp 0.4s ease both;
+  }
+  .work-modal-close {
+    position: absolute; top: 18px; right: 22px;
+    font-size: 26px; line-height: 1; color: var(--light);
+    background: none; border: none; cursor: pointer;
+  }
+  .work-modal-close:hover { color: var(--gold); }
+  .work-modal-box .wf-industry {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); display: block; margin-bottom: 12px;
+  }
+  .work-modal-box .wf-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 23px; font-weight: 600; color: var(--ink);
+    line-height: 1.45; margin-bottom: 22px;
+  }
+  .work-modal-box h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.08em; margin: 22px 0 6px;
+    padding-left: 12px; border-left: 3px solid var(--gold);
+  }
+  .work-modal-box p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px; font-weight: 300; color: var(--mid); line-height: 2;
+  }
+  .work-modal-box .wf-meta {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .work-modal-box .wf-meta span {
+    padding: 5px 12px; border: 1px solid var(--border);
+    font-size: 10px; letter-spacing: 0.1em; color: var(--light);
+  }
+  .work-modal-box .wf-time {
+    margin-top: 16px; font-size: 12px; color: var(--gold);
+    font-family: 'Poppins', sans-serif; letter-spacing: 0.06em;
+  }
+
+  /* ── BIZOPS DIAGRAM ── */
+  .bizops-diagram {
+    display: flex; align-items: stretch; justify-content: center;
+    gap: 0; margin: 56px auto 0; max-width: 880px; flex-wrap: wrap;
+  }
+  .biz-node {
+    flex: 1 1 0; min-width: 200px;
+    background: var(--white); border: 1px solid var(--border);
+    padding: 28px 24px; text-align: center; position: relative;
+  }
+  .biz-node.primary { border-color: var(--gold); background: #FBF6EC; }
+  .biz-node-step {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .biz-node-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px;
+  }
+  .biz-node-desc {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.8;
+  }
+  .biz-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 22px; padding: 0 6px; flex: 0 0 auto;
+  }
+  @media (max-width: 768px) {
+    .biz-arrow { transform: rotate(90deg); padding: 6px 0; }
+    .bizops-diagram { flex-direction: column; }
   }
 
   /* ── FLOW PRICE ── */
@@ -858,11 +950,22 @@
     .about { grid-template-columns: 1fr; gap: 48px; }
     .about-visual { display: none; }
     .services-grid { grid-template-columns: 1fr; }
-    .flow-grid { grid-template-columns: 1fr; gap: 1px; }
-    .flow-step { padding: 28px 20px 32px; }
-    .flow-step-title { font-size: 16px; }
-    .flow-step-desc { font-size: 13px; }
-    .works-grid { grid-template-columns: 1fr; }
+    .flow-steps { grid-template-columns: 1fr; gap: 12px; }
+    .flow-brackets { display: none; }
+    .fstep { text-align: left; padding: 22px 22px; position: relative; }
+    .fstep-num { margin-bottom: 8px; }
+    .fstep-badge { display: inline-block; position: absolute; top: 18px; right: 18px; }
+    .flow-price2 { margin-top: 36px; }
+    .price-row { flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding: 16px 20px; }
+    .price-label { flex: 1 1 auto; }
+    .price-value { font-size: 22px; }
+    .themes-grid { gap: 14px; }
+    .works > .section-label,
+    .works > .section-title,
+    .works > .section-title-jp { padding-left: 0; }
+    .works-track { padding: 4px 20px; }
+    .work-mini { flex-basis: 280px; width: 280px; padding: 26px 24px; }
+    .work-modal-box { padding: 44px 26px; }
     .profile-inner { grid-template-columns: 1fr; gap: 40px; }
     .flow-price-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; }
@@ -896,10 +999,10 @@
   </a>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#flow">Flow</a></li>
     <li><a href="#themes">Expertise</a></li>
-    <li><a href="#works">Works</a></li>
     <li><a href="#profile">Profile</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -921,13 +1024,13 @@
     <rect x="110" y="210" width="180" height="20" fill="#B89A6A"/>
   </svg>
   <div class="hero-content">
-    <p class="hero-eyebrow">個人・スモールビジネス向け AI サポート</p>
-    <h1 class="hero-title">試してから、<br>決めればいい。</h1>
-    <h1 class="hero-title-en">AI, at your pace.</h1>
+    <p class="hero-eyebrow">個人・小規模チーム向け AI 業務オペレーション支援（AI-BizOps）</p>
+    <h1 class="hero-title">あなたの業務、<br>AIで回す。</h1>
+    <h1 class="hero-title-en">AI, running your work.</h1>
     <p class="hero-sub">
-      まずはテキストでご相談（無料）。<br>
-      Google Meet で提案・レクチャー、<br>
-      分単位の明朗会計でAIをあなたの現場へ。
+      いま手作業でやっている仕事を、AIで自動化し、<br>
+      回り続ける仕組みにします。<br>
+      単発実装と月次伴走の両輪で、あなたのペースで。
     </p>
     <a href="#flow" class="btn-primary">ご利用の流れ</a>
   </div>
@@ -961,12 +1064,12 @@
 <section class="about" id="about">
   <div class="about-text">
     <p class="section-label reveal">About</p>
-    <h2 class="section-title reveal">AIと共に、<br>事業の現場へ。</h2>
-    <p class="section-title-jp reveal">Partnering with AI, side by side.</p>
+    <h2 class="section-title reveal">業務を、<br>AIで回す。</h2>
+    <p class="section-title-jp reveal">AI Business Operations, by your side.</p>
     <div class="reveal">
-      <p>MaAI-techは、個人・フリーランス・小規模チームのための、身の丈に合ったAI支援サービスです。</p>
-      <p>「まず試したい」「どこから始めればいいかわからない」という方を対象に、PoCフェーズ（検証・実験）までを中心にサポートします。大きな契約は不要。必要な分だけ、必要なときに。</p>
-      <p>「間合い」の哲学のとおり、押しつけず、焦らせず。あなたのペースでAI活用を前進させます。</p>
+      <p>MaAI-techは、個人・フリーランス・小規模チームのための AI業務オペレーション支援（AI-BizOps）です。いま手作業でやっている仕事を、AIで自動化し、回り続ける仕組みにします。</p>
+      <p>ただ自動化して終わりにはしません。事業を伸ばしてきた人間が、事業の成果から逆算して「どこを変えれば一番効くか」を設計する。単発の実装から、月次で改善し続ける伴走まで対応します。</p>
+      <p>「間合い」の哲学のとおり、押しつけず、焦らせず。あなたのペースでAIを現場に根づかせます。</p>
     </div>
     <div class="gold-rule reveal" style="margin-top:40px;"></div>
   </div>
@@ -988,29 +1091,184 @@
   </div>
 </section>
 
+<!-- ── WORKS (auto-scroll marquee) ── -->
+<section class="works" id="works">
+  <p class="section-label reveal">Works</p>
+  <h2 class="section-title reveal">支援実績</h2>
+  <p class="section-title-jp reveal">Case studies — カードをクリックで詳細</p>
+  <div class="works-marquee reveal">
+    <div class="works-track">
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="美容系中小企業 電子契約 自動送信フロー構築">
+        <span class="work-mini-industry">Beauty / SME</span>
+        <div class="work-mini-title">美容系中小企業<br>電子契約 自動送信フロー構築</div>
+        <p class="work-mini-desc">フォーム入力から契約書の送信までを一気通貫で自動化。締結までのリードタイムを短縮しました。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time">実装支援 <b>計1h</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">Beauty / SME</span>
+          <div class="wf-title">美容系中小企業｜電子契約 自動送信フロー構築</div>
+          <h4>課題</h4>
+          <p>フォーム入力で電子契約書のPDF生成までは自動化できていたが、マネーフォワードクラウド電子契約でのPDF送信が手作業のまま残っていた。業務委託契約について「フォーム入力完了 → 契約書自動送信」まで一気通貫で自動化したいというご要望。</p>
+          <h4>支援内容</h4>
+          <p>Google Workspace ビジネスプランを活用。Googleドライブの電子署名機能と既存フローをつなぐ設計を検討・提案し、自動送信フローを構築支援。担当者の手作業を排除し、締結までのリードタイムを大幅に短縮しました。</p>
+          <div class="wf-meta"><span>業務自動化</span><span>電子契約自動化</span><span>Google Workspace</span></div>
+          <p class="wf-time">実装支援　1セッション / 計1h　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="中規模調査会社 社内ナレッジ基盤 構築支援">
+        <span class="work-mini-industry">Research / Mid-size</span>
+        <div class="work-mini-title">中規模調査会社<br>社内ナレッジ基盤 構築支援</div>
+        <p class="work-mini-desc">散在する紙・Excel・PDFをAIで横断検索。人力検索の工数を削減し、過去の知見を再活用できる形に。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time">実装支援 <b>計2h</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">Research / Mid-size</span>
+          <div class="wf-title">中規模調査会社｜社内ナレッジ基盤 構築支援</div>
+          <h4>課題</h4>
+          <p>過去の調査資料が紙媒体中心で散在。一時期ExcelやPDFでデジタル化を試みたものの乱雑化し、過去の類似調査を探す作業がすべて人力になっていた。</p>
+          <h4>支援内容</h4>
+          <p>散在する紙・Excel・PDFを横断的に検索できる社内ナレッジ基盤の設計を支援。AIを活用した資料の分類・タグ付け・検索フロー構築を伴走し、人力検索の工数削減と知見の再活用を実現しました。</p>
+          <div class="wf-meta"><span>ナレッジ/属人化解消</span><span>AI検索基盤</span></div>
+          <p class="wf-time">実装支援　2セッション / 計2h　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="地域密着イタリアン 受発注自動化 業務再設計">
+        <span class="work-mini-industry">F&amp;B / Local</span>
+        <div class="work-mini-title">地域密着イタリアン<br>受発注自動化 × 業務再設計</div>
+        <p class="work-mini-desc">受発注を完全自動化し、構築した流通基盤を活かした新規事業の立ち上げまで伴走しました。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time">実装支援 <b>計2h</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">F&amp;B / Local Restaurant</span>
+          <div class="wf-title">地域密着イタリアン｜受発注自動化 × 業務再設計</div>
+          <h4>課題</h4>
+          <p>アルバイトの入れ替わりでピザ職人が不足。生地の工場生産で半オートメーション化を実現したものの、受発注業務が引き続き人力で残っていた。さらにその流通基盤を活かした事業展開も模索中だった。</p>
+          <h4>支援内容</h4>
+          <p>AIを活用した受発注フローの完全自動化を設計・構築支援。人的コストを削減しつつ、構築した流通システムを応用したアパレルブランド展開まで伴走。既存リソースを最大限に活用した事業多角化をサポートしました。</p>
+          <div class="wf-meta"><span>業務自動化</span><span>事業再設計</span></div>
+          <p class="wf-time">実装支援　2セッション / 計2h　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="大手HD ヘルスケア部門 メール業務自動化 属人化解消">
+        <span class="work-mini-industry">Healthcare / 個人依頼</span>
+        <div class="work-mini-title">大手HD ヘルスケア部門<br>メール業務自動化・属人化解消</div>
+        <p class="work-mini-desc">暗黙知のCC判断ルールをGAS化。メール作成・送信の手作業と誤送信リスクを削減しました。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time">実装支援 <b>計1h</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">Healthcare / Enterprise — 個人依頼</span>
+          <div class="wf-title">大手HD ヘルスケア部門｜メール業務自動化・属人化解消</div>
+          <h4>背景</h4>
+          <p>大手企業に勤務する担当者様からの個人依頼。会社としてのAI予算はなく、自部門の課題を自腹で解決したいというご相談でした。</p>
+          <h4>課題</h4>
+          <p>組織図PDFの視認性が低く更新頻度も高い。社員元帳CSVのメアドに誤りが混在。To/CC判断ルールが担当者の暗黙知に依存しており、大量メールの手動作成・送信に多大な工数と誤送信リスクが生じていた。</p>
+          <h4>支援内容</h4>
+          <p>外部AI・外部API不使用のGoogle Workspace完結型で解決。CCルールのSheet化（暗黙知の文書化）、GASによるメアド自動検証・CC自動判定・Gmail一括送信スクリプトを構築。担当者の手作業を最小化しました。</p>
+          <div class="wf-meta"><span>個人依頼</span><span>メール業務自動化</span><span>Google Apps Script</span></div>
+          <p class="wf-time">実装支援　1セッション / 計1h　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="市役所 AI活用方針策定支援">
+        <span class="work-mini-industry">Government / 自治体</span>
+        <div class="work-mini-title">市役所<br>AI活用方針策定支援</div>
+        <p class="work-mini-desc">行政特有の要件を踏まえてAI活用方針を策定。自治体として継続的に使える土台づくりを支援。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time"><b>2026年6月〜継続中</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">Government / 自治体</span>
+          <div class="wf-title">市役所｜AI活用方針策定支援</div>
+          <h4>課題</h4>
+          <p>行政機関として生成AI活用の必要性は認識しているものの、明確な活用方針や運用ルールが整備されておらず、どの業務にどう導入すべきかの判断基準がない状態。民間企業とは異なるガバナンス・情報セキュリティ要件への配慮も必要だった。</p>
+          <h4>支援内容</h4>
+          <p>ChatGPT・Gemini・Claude等の生成AIについて、行政機関特有の要件を踏まえた活用方針の策定を支援。業務効率化の観点からAI活用が可能な領域を洗い出し、優先順位を整理した上で、導入リスクと運用ルールに関する助言を実施。職員へのヒアリングを通じて現場の実態を方針に反映させ、自治体として継続的に活用できる土台づくりをサポートしました。</p>
+          <div class="wf-meta"><span>AI活用方針策定</span><span>ガバナンス</span><span>PM・エンジニア</span></div>
+          <p class="wf-time">2026年6月〜継続中　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+      <div class="work-mini" tabindex="0" role="button" aria-label="成長企業 IT業務顧問 月次">
+        <span class="work-mini-industry">SME / 月次顧問</span>
+        <div class="work-mini-title">成長企業（売上1億規模）<br>IT業務顧問（月次）</div>
+        <p class="work-mini-desc">IT基盤整備からAI活用設計、クラウド会計導入まで。月次で相談できる体制を一貫構築しました。</p>
+        <div class="work-mini-foot">
+          <span class="work-mini-time"><b>月次顧問・継続中</b></span>
+          <span class="work-mini-more">詳細</span>
+        </div>
+        <div class="work-full" hidden>
+          <span class="wf-industry">SME / 月次顧問（AI-BizOps）</span>
+          <div class="wf-title">成長企業｜IT業務顧問（月次）</div>
+          <h4>課題</h4>
+          <p>売上高1億円規模まで成長した一方、社内にITに詳しい人材がおらず、業務効率化やAI活用の判断を誰にも相談できない状態。独自ドメイン取得やクラウド会計ソフト導入など、IT基盤整備も手つかずのまま事業を回していた。</p>
+          <h4>支援内容</h4>
+          <p>月次の顧問相談を軸に、独自ドメイン取得とMicrosoft 365連携設定によるIT基盤整備、Google Workspace（Gemini等）を活用した業務AI活用シーンの設計・提案を実施。クラウド会計ソフト（freee）の初期セットアップ支援も合わせて行い、会計・新規ECサイト展開に関する方向性のアドバイスまで一貫してサポート。単発の支援ではなく、継続的に相談できる体制を構築しました。</p>
+          <div class="wf-meta"><span>月次AI顧問</span><span>IT基盤整備</span><span>Microsoft 365 / freee</span></div>
+          <p class="wf-time">月次顧問・継続中　※無料テキスト相談・有償事後サポート別途</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── SERVICES ── -->
 <section class="services" id="services">
   <p class="section-label reveal">Services</p>
   <h2 class="section-title reveal">提供サービス</h2>
-  <p class="section-title-jp reveal">What we do</p>
+  <p class="section-title-jp reveal">業務をAIで回す、3つの柱</p>
   <div class="services-grid">
     <div class="service-card reveal">
       <div class="service-num">01</div>
-      <h3 class="service-title-jp">新規事業 伴走支援</h3>
-      <span class="service-title-en">New Business Support</span>
-      <p class="service-desc">アイデアの検証から事業計画の策定、立ち上げフェーズまで、AIツールを活用しながら伴走型でサポートします。</p>
+      <h3 class="service-title-jp">業務自動化</h3>
+      <span class="service-title-en">Workflow Automation</span>
+      <p class="service-desc">メール対応・受発注・電子契約など、毎日・毎月くり返す定型業務をAIで自動化。手作業と誤りを減らします。</p>
     </div>
     <div class="service-card reveal">
       <div class="service-num">02</div>
-      <h3 class="service-title-jp">業務効率化サポート</h3>
-      <span class="service-title-en">Workflow Optimization</span>
-      <p class="service-desc">現場の業務フローを分析し、AIによる自動化・効率化の施策を設計・実装まで一気通貫でご支援します。</p>
+      <h3 class="service-title-jp">ナレッジ基盤・属人化解消</h3>
+      <span class="service-title-en">Knowledge &amp; Search</span>
+      <p class="service-desc">「その人しかわからない」をなくす。社内文書をAIで横断検索できる仕組み（RAG）で、知識を頭の外に出します。</p>
     </div>
     <div class="service-card reveal">
       <div class="service-num">03</div>
-      <h3 class="service-title-jp">AI活用コンサルティング</h3>
-      <span class="service-title-en">AI Consulting</span>
-      <p class="service-desc">ChatGPT・Claude等のAIツール導入支援から、社内研修・プロンプト設計まで、AI活用の全体戦略を構築します。</p>
+      <h3 class="service-title-jp">事業視点での業務再設計</h3>
+      <span class="service-title-en">Business-led Redesign</span>
+      <p class="service-desc">ただ自動化するのではなく、事業の成果から逆算して「どこを変えれば一番効くか」を設計。新規事業・ブランド再成長の経験が入ります。</p>
+    </div>
+  </div>
+
+  <p class="section-title-jp reveal" style="margin-top:72px; text-align:center; color:var(--mid);">単発実装と月次伴走の<strong style="color:var(--gold); font-weight:400;">両輪</strong>で、無理なく始められます</p>
+  <div class="bizops-diagram reveal">
+    <div class="biz-node">
+      <div class="biz-node-step">入口の入口</div>
+      <div class="biz-node-title">無料テキスト相談</div>
+      <p class="biz-node-desc">何から手をつけるか、<br>まず気軽に相談</p>
+    </div>
+    <div class="biz-arrow">→</div>
+    <div class="biz-node">
+      <div class="biz-node-step">入口</div>
+      <div class="biz-node-title">単発AI実装</div>
+      <p class="biz-node-desc">まず1つ、具体的な<br>業務をAI化して体感</p>
+    </div>
+    <div class="biz-arrow">→</div>
+    <div class="biz-node primary">
+      <div class="biz-node-step">本命</div>
+      <div class="biz-node-title">月次AI-BizOps伴走</div>
+      <p class="biz-node-desc">継続的に業務を<br>改善し続ける</p>
     </div>
   </div>
 </section>
@@ -1018,57 +1276,67 @@
 <!-- ── FLOW ── -->
 <section class="flow" id="flow">
   <p class="section-label reveal">How it works</p>
-  <h2 class="section-title reveal">ご利用の流れ</h2>
-  <p class="section-title-jp reveal">Simple, transparent, flexible.</p>
-  <div class="flow-grid">
-    <div class="flow-step reveal">
-      <div class="flow-step-num">01</div>
-      <span class="flow-step-tag">Free</span>
-      <div class="flow-step-title">テキストで<br>事前相談</div>
-      <p class="flow-step-desc">メールやフォームで現状・やりたいことをご連絡ください。テキストベースで内容を確認します。</p>
-      <span class="flow-badge">完全無料</span>
+  <h2 class="section-title reveal">ご利用の流れと費用</h2>
+  <p class="section-title-jp reveal">メール相談は無料。Google Meet からが有料です。</p>
+
+  <div class="flow-steps reveal">
+    <div class="fstep">
+      <span class="fstep-badge free">無料</span>
+      <div class="fstep-num">STEP 01</div>
+      <div class="fstep-title">メールで相談</div>
+      <p class="fstep-desc">現状・やりたいことをご連絡。テキストで内容を確認します。</p>
     </div>
-    <div class="flow-step reveal">
-      <div class="flow-step-num">02</div>
-      <span class="flow-step-tag">Quote</span>
-      <div class="flow-step-title">時間単位で<br>お見積もり</div>
-      <p class="flow-step-desc">内容を確認後、必要な時間をご提示。プロジェクト一括ではなく、時間単位の明朗会計です。</p>
-      <span class="flow-badge">時間単位</span>
+    <div class="fstep">
+      <span class="fstep-badge free">無料</span>
+      <div class="fstep-num">STEP 02</div>
+      <div class="fstep-title">お見積もり</div>
+      <p class="fstep-desc">必要な時間をご提示。ここまで費用はかかりません。</p>
     </div>
-    <div class="flow-step reveal">
-      <div class="flow-step-num">03</div>
-      <span class="flow-step-tag">Meet</span>
-      <div class="flow-step-title">Google Meet で<br>提案・レクチャー</div>
-      <p class="flow-step-desc">画面共有しながらリアルタイムで提案・ハンズオン。その場で動かして、感触をつかんでいただきます。</p>
-      <span class="flow-badge">オンライン完結</span>
+    <div class="fstep paid">
+      <span class="fstep-badge paid">有料</span>
+      <div class="fstep-num">STEP 03</div>
+      <div class="fstep-title">Meetで提案・実装</div>
+      <p class="fstep-desc">画面共有でその場で提案・ハンズオン。ここから有料です。</p>
     </div>
-    <div class="flow-step reveal">
-      <div class="flow-step-num">04</div>
-      <span class="flow-step-tag">Billing</span>
-      <div class="flow-step-title">分単位で<br>ご請求</div>
-      <p class="flow-step-desc">実際にかかった時間を分単位で算出してご請求。余分な費用は一切発生しません。</p>
-      <span class="flow-badge">分単位精算</span>
+    <div class="fstep paid">
+      <span class="fstep-badge paid">有料</span>
+      <div class="fstep-num">STEP 04</div>
+      <div class="fstep-title">分単位でご請求</div>
+      <p class="fstep-desc">かかった時間だけを分単位で精算。余分な費用はなし。</p>
     </div>
-    <div class="flow-step reveal">
-      <div class="flow-step-num">05</div>
-      <span class="flow-step-tag">Support</span>
-      <div class="flow-step-title">その後も<br>サポート</div>
-      <p class="flow-step-desc">不明点があれば再度 Google Meet またはメールで対応。追加サポートは5分単位での請求です。</p>
-      <span class="flow-badge">5分単位〜</span>
+    <div class="fstep paid">
+      <span class="fstep-badge paid">有料</span>
+      <div class="fstep-num">STEP 05</div>
+      <div class="fstep-title">継続サポート</div>
+      <p class="fstep-desc">その後の相談・改善も。月次AI-BizOps伴走へ発展もできます。</p>
     </div>
   </div>
-  <div class="flow-note reveal">
-    <div class="flow-note-icon">💡</div>
-    <p class="flow-note-text">
-      MaAI-techは<strong>PoCフェーズ（検証・実験）</strong>を中心に支援します。「まず小さく試す」ことで、失敗コストを最小化。うまくいったら次のステップへ。個人・フリーランス・小規模チームの方に最適な、<strong>使った分だけ払うAI支援</strong>です。
-    </p>
-  </div>
-  <div class="flow-price reveal">
-    <div class="flow-price-inner">
-      <span class="flow-price-label">料金目安</span>
-      <span class="flow-price-value">最大 ¥10,000<small> / h</small></span>
-      <span class="flow-price-note">※ 2026年6月現在。案件によって前後します。分単位・5分単位で精算。</span>
+
+  <div class="flow-brackets reveal">
+    <div class="flow-bracket free">
+      <div class="flow-bracket-line"></div>
+      <div class="flow-bracket-label">ここまで無料</div>
     </div>
+    <div class="flow-bracket paid">
+      <div class="flow-bracket-line"></div>
+      <div class="flow-bracket-label">ここから有料（初回 ¥10,000／時〜）</div>
+    </div>
+  </div>
+
+  <div class="flow-price2 reveal">
+    <div class="price-row">
+      <div class="price-label">メールでの事前相談<small>内容確認・お見積もりまで</small></div>
+      <div class="price-value free">無料</div>
+    </div>
+    <div class="price-row">
+      <div class="price-label">はじめての方（初回）<small>Google Meet での相談・実装</small></div>
+      <div class="price-value">¥10,000<small style="font-size:14px; font-family:'Noto Serif JP',serif;"> / 1時間</small></div>
+    </div>
+    <div class="price-row muted">
+      <div class="price-label">2回目以降の支援<small>継続実装・月次AI-BizOps伴走</small></div>
+      <div class="price-value quote">別途お見積もり</div>
+    </div>
+    <p class="price-note">※ 料金は2026年6月現在。Meet 相談以降は分単位で精算します。月次AI-BizOps伴走（継続顧問）は業務範囲に応じてお見積もりします。</p>
   </div>
 </section>
 
@@ -1079,120 +1347,43 @@
   <p class="section-title-jp reveal">What we do best</p>
   <div class="themes-grid reveal">
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 0-13.7-5.3M4 12.5a8 8 0 0 0 13.7 5.3"/><path d="M18.5 3v3.2h-3.2M5.5 21v-3.2h3.2"/></svg></div>
       <div class="theme-num">01</div>
-      <div class="theme-body">
-        <div class="theme-title">業務自動化</div>
-        <div class="theme-tags">
-          <span class="theme-tag">電子契約の自動送信</span>
-          <span class="theme-tag">受発注フロー</span>
-          <span class="theme-tag">メール一括処理</span>
-          <span class="theme-tag">Google Apps Script</span>
-        </div>
-      </div>
+      <div class="theme-title">業務自動化</div>
+      <p class="theme-desc">メールの仕分け・受発注・電子契約など、毎日くり返す定型作業をAIに任せます。</p>
     </div>
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg></div>
       <div class="theme-num">02</div>
-      <div class="theme-body">
-        <div class="theme-title">ナレッジ管理</div>
-        <div class="theme-tags">
-          <span class="theme-tag">社内検索基盤の構築</span>
-          <span class="theme-tag">PDF・Excel整理</span>
-          <span class="theme-tag">属人化の解消</span>
-        </div>
-      </div>
+      <div class="theme-title">ナレッジ管理・属人化解消</div>
+      <p class="theme-desc">散らばった社内文書をAIで横断検索。「あの人しか知らない」をなくします。</p>
     </div>
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.1 5.4 5.4 2.1-5.4 2.1L12 17.5l-2.1-5.4L4.5 10l5.4-2.1z"/><path d="M18.5 16.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
       <div class="theme-num">03</div>
-      <div class="theme-body">
-        <div class="theme-title">AI活用支援</div>
-        <div class="theme-tags">
-          <span class="theme-tag">ChatGPT / Claude</span>
-          <span class="theme-tag">Google Gemini</span>
-          <span class="theme-tag">Microsoft Copilot</span>
-          <span class="theme-tag">プロンプト設計</span>
-        </div>
-      </div>
+      <div class="theme-title">AI活用支援</div>
+      <p class="theme-desc">ChatGPT・Claude・Gemini・Copilotの選び方から使い方、プロンプト設計まで。</p>
     </div>
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="4" y1="9.5" x2="20" y2="9.5"/><line x1="8.5" y1="3" x2="8.5" y2="6.5"/><line x1="15.5" y1="3" x2="15.5" y2="6.5"/><path d="M9 15l2 2 4-4"/></svg></div>
       <div class="theme-num">04</div>
-      <div class="theme-body">
-        <div class="theme-title">新規事業 PoC</div>
-        <div class="theme-tags">
-          <span class="theme-tag">アイデア検証</span>
-          <span class="theme-tag">フロー設計</span>
-          <span class="theme-tag">小さく試す伴走</span>
-        </div>
-      </div>
+      <div class="theme-title">月次AI-BizOps伴走</div>
+      <p class="theme-desc">単発で終わらせず、毎月いっしょに業務を改善し続ける顧問型の支援です。</p>
     </div>
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
       <div class="theme-num">05</div>
-      <div class="theme-body">
-        <div class="theme-title">Google Workspace 活用</div>
-        <div class="theme-tags">
-          <span class="theme-tag">Sheets / Forms 連携</span>
-          <span class="theme-tag">GAS自動化</span>
-          <span class="theme-tag">Gemini 組み込み</span>
-        </div>
-      </div>
+      <div class="theme-title">Google Workspace 活用</div>
+      <p class="theme-desc">Sheets / Forms 連携やGAS自動化、Geminiの組み込みで日々の作業を軽くします。</p>
     </div>
     <div class="theme-item">
+      <div class="theme-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5a2 2 0 0 1-2 2H8l-4 3.5V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><line x1="8.5" y1="9" x2="15.5" y2="9"/><line x1="8.5" y1="12" x2="13" y2="12"/></svg></div>
       <div class="theme-num">06</div>
-      <div class="theme-body">
-        <div class="theme-title">個人向け AI 相談</div>
-        <div class="theme-tags">
-          <span class="theme-tag">会社がAI予算を出してくれない方</span>
-          <span class="theme-tag">何から始めるかわからない方</span>
-          <span class="theme-tag">初回無料・分単位精算</span>
-        </div>
-      </div>
+      <div class="theme-title">個人向け AI 相談</div>
+      <p class="theme-desc">「会社が予算を出さない」「何から始めれば」に、初回1時間からマンツーマンで。</p>
     </div>
   </div>
-  <p class="themes-note reveal">↓ 実際の支援事例はこちら</p>
-</section>
-
-<!-- ── WORKS ── -->
-<section class="works" id="works">
-  <p class="section-label reveal">Works</p>
-  <h2 class="section-title reveal">支援実績</h2>
-  <p class="section-title-jp reveal">Case studies</p>
-  <div class="works-grid">
-    <div class="work-card reveal">
-      <span class="work-industry">Beauty / SME</span>
-      <div class="work-title">美容系中小企業<br>電子契約 自動送信フロー構築</div>
-      <p class="work-desc">【課題】フォーム入力で電子契約書のPDF生成まで自動化できていたが、マネーフォワードクラウド電子契約でのPDF送信が手作業のまま残っていた。業務委託契約については「フォーム入力完了 → 契約書自動送信」まで一気通貫で自動化したいというご要望。<br><br>【環境】Google Workspace ビジネスプランを活用。Googleドライブの電子署名機能と既存フローをつなぐ設計を検討・提案し、自動送信フローを構築支援。担当者の手作業を排除し、締結までのリードタイムを大幅に短縮しました。</p>
-      <span class="work-tag">業務効率化</span>
-      <span class="work-tag">電子契約自動化</span>
-      <span class="work-tag">Google Workspace</span>
-      <div class="work-time">実装支援　<span class="work-time-value">1セッション / 計1h</span><span style="font-size:10px; color:var(--light); margin-left:8px;">※無料テキスト相談・有償事後サポート別途</span></div>
-    </div>
-    <div class="work-card reveal">
-      <span class="work-industry">Research / Mid-size</span>
-      <div class="work-title">中規模調査会社<br>社内ナレッジ基盤 構築支援</div>
-      <p class="work-desc">【課題】過去の調査資料が紙媒体中心で散在。一時期ExcelやPDFでデジタル化を試みたものの乱雑化し、過去の類似調査を探す作業がすべて人力になっていた。<br><br>【支援内容】散在する紙・Excel・PDFを横断的に検索できる社内ナレッジ基盤の設計を支援。AIを活用した資料の分類・タグ付け・検索フロー構築をPoC段階から伴走し、人力検索の工数削減と知見の再活用を実現しました。</p>
-      <span class="work-tag">ナレッジ管理</span>
-      <span class="work-tag">AI検索基盤</span>
-      <span class="work-tag">PoC支援</span>
-      <div class="work-time">実装支援　<span class="work-time-value">2セッション / 計2h</span><span style="font-size:10px; color:var(--light); margin-left:8px;">※無料テキスト相談・有償事後サポート別途</span></div>
-    </div>
-    <div class="work-card reveal">
-      <span class="work-industry">F&B / Local Restaurant</span>
-      <div class="work-title">地域密着イタリアン<br>受発注自動化 × 新規事業伴走</div>
-      <p class="work-desc">【課題】アルバイトの入れ替わりでピザ職人が不足。生地の工場生産で半オートメーション化を実現したものの、受発注業務が引き続き人力で残っていた。さらにその流通基盤を活かした新規事業展開も模索中。<br><br>【支援内容】AIを活用した受発注フローの完全自動化を設計・構築支援。人的コストを削減しつつ、構築した流通システムを応用したアパレルブランド展開のPoC設計まで伴走。既存リソースを最大限に活用した事業多角化をサポートしました。</p>
-      <span class="work-tag">受発注自動化</span>
-      <span class="work-tag">新規事業開発</span>
-      <span class="work-tag">PoC支援</span>
-      <div class="work-time">実装支援　<span class="work-time-value">2セッション / 計2h</span><span style="font-size:10px; color:var(--light); margin-left:8px;">※無料テキスト相談・有償事後サポート別途</span></div>
-    </div>
-    <div class="work-card reveal">
-      <span class="work-industry">Healthcare / Enterprise — 個人依頼</span>
-      <div class="work-title">大手HD ヘルスケア部門<br>メール業務自動化・属人化解消</div>
-      <p class="work-desc">【背景】大手企業に勤務する担当者様からの個人依頼。会社としてのAI予算はなく、自部門の課題を自腹で解決したいというご相談でした。<br><br>【課題】組織図PDFの視認性が低く更新頻度も高い。社員元帳CSVのメアドに誤りが混在。To/CC判断ルールが担当者の暗黙知に依存しており、大量メールの手動作成・送信に多大な工数と誤送信リスクが生じていた。<br><br>【支援内容】外部AI・外部API不使用のGoogle Workspace完結型で解決。CCルールのSheet化（暗黙知の文書化）、GASによるメアド自動検証・CC自動判定・Gmail一括送信スクリプトを構築。担当者の手作業を最小化しました。</p>
-      <span class="work-tag">個人依頼</span>
-      <span class="work-tag">メール業務自動化</span>
-      <span class="work-tag">Google Apps Script</span>
-      <div class="work-time">実装支援　<span class="work-time-value">1セッション / 計1h</span><span style="font-size:10px; color:var(--light); margin-left:8px;">※無料テキスト相談・有償事後サポート別途</span></div>
-    </div>
-  </div>
+  <p class="themes-note reveal">↑ 実際の支援事例は冒頭の「支援実績」をご覧ください</p>
 </section>
 
 <!-- ── PROFILE ── -->
@@ -1205,22 +1396,9 @@
       <div class="gold-rule"></div>
     </div>
     <div class="profile-body reveal">
-      <p>AIサポート・コンサルタントとして、スタートアップから中小企業まで幅広いクライアントの新規事業立ち上げおよび業務効率化を支援。</p>
+      <p>AIサポート・コンサルタントとして、個人・小規模チームの業務をAIで回す（AI-BizOps）支援を行う。海外での新ブランド立ち上げ（初年度30億・3カ国展開）や成熟ブランドの再成長（売上+170%）など、事業を伸ばしてきた経験を背景に、自動化して終わりではなく成果につながる業務を設計する。</p>
       <p>「間合い」の哲学を仕事の軸に置き、クライアントそれぞれのタイミングと状況に寄り添いながら、最小限のリソースで最大限の成果を生み出すことを追求しています。</p>
     </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<!-- ── NOTICE ── -->
-<section class="notice-banner" id="notice">
-  <div class="notice-box reveal">
-    <p class="notice-title">お問い合わせフォームの不具合に関するお詫びとお知らせ</p>
-    <p class="notice-body">
-      2026年6月17日以前にお問い合わせフォームよりご連絡いただいた方について、システムの不具合により、送信内容が弊社に届いていなかった可能性があることが判明いたしました。<br><br>
-      該当する期間にご連絡をいただいたにもかかわらず、弊社からの返信がなかった方には、心よりお詫び申し上げます。<br><br>
-      お手数をおかけしますが、再度<a href="#contact">お問い合わせフォーム</a>または <a href="mailto:info@maai-tech.com" style="color:var(--gold);">info@maai-tech.com</a> よりご連絡ください。該当の方には、初回ご依頼時に割引価格で対応させていただきます。
-    </p>
   </div>
 </section>
 
@@ -1247,8 +1425,9 @@
       <label class="form-label" for="cf-type">ご相談の種類<span>*</span></label>
       <select class="form-select" id="cf-type" name="type" required>
         <option value="" disabled selected>選択してください</option>
-        <option>新規事業の伴走支援</option>
-        <option>業務効率化・自動化</option>
+        <option>業務自動化（メール・受発注・電子契約 など）</option>
+        <option>ナレッジ基盤・属人化解消（社内検索）</option>
+        <option>月次AI-BizOps伴走・IT/AI顧問</option>
         <option>AIツール導入・社内研修</option>
         <option>その他・まだ決まっていない</option>
       </select>
@@ -1264,6 +1443,14 @@
     </div>
   </form>
 </section>
+
+<!-- ── WORK MODAL ── -->
+<div class="work-modal" id="workModal" role="dialog" aria-modal="true" aria-label="支援実績の詳細">
+  <div class="work-modal-box">
+    <button class="work-modal-close" id="workModalClose" aria-label="閉じる">&times;</button>
+    <div class="work-modal-content" id="workModalContent"></div>
+  </div>
+</div>
 
 <!-- ── FOOTER ── -->
 <footer>
@@ -1290,6 +1477,51 @@
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Works marquee: duplicate cards for seamless loop + click to open modal ──
+  const worksTrack = document.querySelector('.works-track');
+  const workModal = document.getElementById('workModal');
+  const workModalContent = document.getElementById('workModalContent');
+
+  if (worksTrack) {
+    // duplicate the set once so the -50% scroll loops seamlessly
+    Array.from(worksTrack.children).forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.dataset.clone = '1';
+      worksTrack.appendChild(clone);
+    });
+
+    const openModal = (card) => {
+      const full = card.querySelector('.work-full');
+      if (!full || !workModal) return;
+      workModalContent.innerHTML = full.innerHTML;
+      workModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    worksTrack.addEventListener('click', (e) => {
+      const card = e.target.closest('.work-mini');
+      if (card) openModal(card);
+    });
+    worksTrack.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const card = e.target.closest('.work-mini');
+        if (card) { e.preventDefault(); openModal(card); }
+      }
+    });
+  }
+
+  const closeModal = () => {
+    if (!workModal) return;
+    workModal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  if (workModal) {
+    document.getElementById('workModalClose').addEventListener('click', closeModal);
+    workModal.addEventListener('click', (e) => { if (e.target === workModal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  }
 
   // Contact form → Web3Forms（確実にメールを送信）+ GA4イベント
   const form = document.getElementById('contactForm');
