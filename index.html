@@ -999,44 +999,53 @@
   .footer-sns a:hover { color: var(--gold); }
 
   /* ── FAQ ── */
-  .faq { background: var(--ghost); }
+  .faq { background: var(--white); }
   .faq-list {
-    max-width: 760px;
-    margin: 48px 0 0;
+    max-width: 900px;
+    margin-top: 24px;
+    border-top: 1px solid var(--border);
   }
-  .faq-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    margin-bottom: 12px;
-  }
+  .faq-item { border-bottom: 1px solid var(--border); }
   .faq-item summary {
     list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 20px 24px;
+    align-items: baseline;
+    gap: 20px;
+    padding: 26px 8px;
     cursor: pointer;
     font-family: 'Noto Serif JP', serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
+    letter-spacing: 0.04em;
     color: var(--ink);
+    transition: color 0.2s;
   }
+  .faq-item summary:hover { color: var(--gold); }
   .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::before {
+    content: 'Q.';
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--gold);
+    flex: 0 0 auto;
+  }
   .faq-item summary::after {
     content: '＋';
+    margin-left: auto;
     color: var(--gold);
     font-size: 18px;
+    font-weight: 300;
     flex: 0 0 auto;
   }
   .faq-item[open] summary::after { content: '－'; }
-  .faq-item[open] summary { border-bottom: 1px solid var(--border); }
   .faq-a {
-    padding: 18px 24px 22px;
+    padding: 0 8px 30px 49px;
+    max-width: 760px;
     font-family: 'Noto Serif JP', serif;
     font-size: 14px;
     font-weight: 300;
-    line-height: 2;
+    line-height: 2.1;
     color: var(--mid);
   }
 
@@ -1138,6 +1147,8 @@
     .works > .section-title-jp { padding-left: 0; }
     .works-track { padding: 4px 20px; }
     .works-jump { padding-left: 0; }
+    .faq-item summary { font-size: 15px; padding: 22px 4px; gap: 14px; }
+    .faq-a { padding: 0 4px 26px 40px; }
     .works-nav { width: 38px; height: 38px; font-size: 16px; }
     .works-nav-prev { left: 8px; }
     .works-nav-next { right: 8px; }
@@ -1611,6 +1622,7 @@
 <section class="faq" id="faq">
   <p class="section-label reveal">FAQ</p>
   <h2 class="section-title reveal">よくあるご質問</h2>
+  <p class="section-title-jp reveal">Questions — ご相談の前の不安に、先にお答えします</p>
   <div class="faq-list reveal">
     <details class="faq-item">
       <summary>料金はどのくらいかかりますか？</summary>
