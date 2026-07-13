@@ -46,6 +46,45 @@
   "priceRange": "〜¥10,000/h"
 }
 </script>
+<!-- 構造化データ（FAQ） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "料金はどのくらいかかりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "メールでのご相談とお見積もりまでは無料です。Google Meetでの相談・実装から有料（¥10,000/時・分単位精算）で、かかった時間だけのご請求です。月次の伴走支援は業務範囲に応じてお見積もりします。" }
+    },
+    {
+      "@type": "Question",
+      "name": "遠方ですが対応できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "全国対応しています。ご相談から実装まですべてリモート（メール・Google Meet）で完結するため、地域による差はありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "社内にITに詳しい人がいなくても大丈夫ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "大丈夫です。支援先の多くが「ITに詳しい人がいない」状態から始まっています。専門用語を使わず、導入して終わりではなく、現場が自分たちで使い続けられる形になるまで伴走します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "相談の前に何を準備すればいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "特別な準備は不要です。いま使っているツールの名前（Excel・Gmail・会計ソフトなど）と、時間がかかっている作業のメモがあれば十分です。何から手をつけるかを整理するところからご一緒します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "社内データを外部に出せないのですが。",
+      "acceptedAnswer": { "@type": "Answer", "text": "ご要望に応じて秘密保持契約（NDA）を締結します。また、外部AIや外部APIを使わずGoogle Workspace内で完結させる構成など、データを外に出さない設計での支援実績があります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ごく小さな相談でもいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "「この作業、AIでなんとかなる？」の一言で構いません。初回のテキスト相談は無料です。AIを使わない方が良い場合は、その旨をはっきりお伝えします。" }
+    }
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) — GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCBB82KF1Y"></script>
 <script>
@@ -710,25 +749,62 @@
   .works > .section-label,
   .works > .section-title,
   .works > .section-title-jp { padding-left: 60px; }
+  .works-jump {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    padding-left: 60px; margin-top: 8px;
+  }
+  .works-jump button {
+    padding: 8px 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px; font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .works-jump button:hover,
+  .works-jump button.active {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .works-shell {
+    margin-top: 36px;
+    position: relative;
+  }
   .works-marquee {
-    margin-top: 52px;
     position: relative;
     width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   }
+  .works-marquee::-webkit-scrollbar { display: none; }
   .works-track {
     display: flex;
     gap: 24px;
     width: max-content;
     padding: 4px 60px;
-    animation: worksScroll 64s linear infinite;
   }
-  .works-marquee:hover .works-track { animation-play-state: paused; }
-  @keyframes worksScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(calc(-50% - 12px)); }
+  .works-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 44px; height: 44px;
+    border: 1px solid var(--gold);
+    background: rgba(255,255,255,0.92);
+    color: var(--gold);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
   }
+  .works-nav:hover { background: var(--gold); color: var(--white); }
+  .works-nav-prev { left: 16px; }
+  .works-nav-next { right: 16px; }
   .work-mini {
     flex: 0 0 360px;
     width: 360px;
@@ -897,6 +973,66 @@
     line-height: 1.8;
   }
 
+  /* ── SNS LINKS ── */
+  .profile-body p.profile-sns {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .profile-sns a { color: var(--gold); text-decoration: none; }
+  .profile-sns a:hover { text-decoration: underline; }
+  .footer-sns a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+  .footer-sns a:hover { color: var(--gold); }
+
+  /* ── FAQ ── */
+  .faq { background: var(--ghost); }
+  .faq-list {
+    max-width: 760px;
+    margin: 48px 0 0;
+  }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+  .faq-item summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '＋';
+    color: var(--gold);
+    font-size: 18px;
+    flex: 0 0 auto;
+  }
+  .faq-item[open] summary::after { content: '－'; }
+  .faq-item[open] summary { border-bottom: 1px solid var(--border); }
+  .faq-a {
+    padding: 18px 24px 22px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--mid);
+  }
+
   /* ── CONTACT FORM ── */
   .contact-form {
     max-width: 640px;
@@ -994,6 +1130,10 @@
     .works > .section-title,
     .works > .section-title-jp { padding-left: 0; }
     .works-track { padding: 4px 20px; }
+    .works-jump { padding-left: 0; }
+    .works-nav { width: 38px; height: 38px; font-size: 16px; }
+    .works-nav-prev { left: 8px; }
+    .works-nav-next { right: 8px; }
     .work-mini { flex-basis: 280px; width: 280px; padding: 26px 24px; }
     .work-modal-box { padding: 44px 26px; }
     .profile-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1038,6 +1178,7 @@
     <li><a href="#flow">Flow</a></li>
     <li><a href="#themes">Expertise</a></li>
     <li><a href="#profile">Profile</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -1133,13 +1274,24 @@
   <p class="section-label reveal">Works</p>
   <h2 class="section-title reveal">支援実績</h2>
   <p class="section-title-jp reveal">Case studies — カードをクリックで詳細</p>
-  <div class="works-marquee reveal">
-    <div class="works-track">
+  <div class="works-jump reveal" role="tablist" aria-label="実績へジャンプ">
+    <button type="button" data-work="0">電子契約自動化</button>
+    <button type="button" data-work="1">ナレッジ検索</button>
+    <button type="button" data-work="2">受発注自動化</button>
+    <button type="button" data-work="3">メール自動化</button>
+    <button type="button" data-work="4">自治体AI方針</button>
+    <button type="button" data-work="5">月次顧問</button>
+  </div>
+  <div class="works-shell reveal">
+    <button class="works-nav works-nav-prev" type="button" aria-label="前の実績へ">←</button>
+    <button class="works-nav works-nav-next" type="button" aria-label="次の実績へ">→</button>
+    <div class="works-marquee">
+      <div class="works-track">
 
       <div class="work-mini" tabindex="0" role="button" aria-label="美容系中小企業 電子契約 自動送信フロー構築">
         <span class="work-mini-industry">Beauty / SME</span>
         <div class="work-mini-title">美容系中小企業<br>電子契約 自動送信フロー構築</div>
-        <p class="work-mini-desc">フォーム入力から契約書の送信までを一気通貫で自動化。締結までのリードタイムを短縮しました。</p>
+        <p class="work-mini-desc">月50〜60件の契約書送信を一気通貫で自動化。月2〜3時間の手作業がゼロになりました。</p>
         <div class="work-mini-foot">
           <span class="work-mini-time">実装支援 <b>計1h</b></span>
           <span class="work-mini-more">詳細</span>
@@ -1150,7 +1302,7 @@
           <h4>課題</h4>
           <p>フォーム入力で電子契約書のPDF生成までは自動化できていたが、マネーフォワードクラウド電子契約でのPDF送信が手作業のまま残っていた。業務委託契約について「フォーム入力完了 → 契約書自動送信」まで一気通貫で自動化したいというご要望。</p>
           <h4>支援内容</h4>
-          <p>Google Workspace ビジネスプランを活用。Googleドライブの電子署名機能と既存フローをつなぐ設計を検討・提案し、自動送信フローを構築支援。担当者の手作業を排除し、締結までのリードタイムを大幅に短縮しました。</p>
+          <p>Google Workspace ビジネスプランを活用。Googleドライブの電子署名機能と既存フローをつなぐ設計を検討・提案し、自動送信フローを構築支援。月50〜60件・1件あたり2〜3分かかっていた送信作業（月2〜3時間分）がゼロになり、締結までのリードタイムも大幅に短縮しました。</p>
           <div class="wf-meta"><span>業務自動化</span><span>電子契約自動化</span><span>Google Workspace</span></div>
           <p class="wf-time">実装支援　1セッション / 計1h　※無料テキスト相談・有償事後サポート別途</p>
         </div>
@@ -1159,7 +1311,7 @@
       <div class="work-mini" tabindex="0" role="button" aria-label="中規模調査会社 社内ナレッジ基盤 構築支援">
         <span class="work-mini-industry">Research / Mid-size</span>
         <div class="work-mini-title">中規模調査会社<br>社内ナレッジ基盤 構築支援</div>
-        <p class="work-mini-desc">散在する紙・Excel・PDFをAIで横断検索。人力検索の工数を削減し、過去の知見を再活用できる形に。</p>
+        <p class="work-mini-desc">毎日20〜30分かかっていた資料探しをAI横断検索に。月約10時間の「探す時間」を削減。</p>
         <div class="work-mini-foot">
           <span class="work-mini-time">実装支援 <b>計2h</b></span>
           <span class="work-mini-more">詳細</span>
@@ -1170,7 +1322,7 @@
           <h4>課題</h4>
           <p>過去の調査資料が紙媒体中心で散在。一時期ExcelやPDFでデジタル化を試みたものの乱雑化し、過去の類似調査を探す作業がすべて人力になっていた。</p>
           <h4>支援内容</h4>
-          <p>散在する紙・Excel・PDFを横断的に検索できる社内ナレッジ基盤の設計を支援。AIを活用した資料の分類・タグ付け・検索フロー構築を伴走し、人力検索の工数削減と知見の再活用を実現しました。</p>
+          <p>散在する紙・Excel・PDFを横断的に検索できる社内ナレッジ基盤の設計を支援。AIを活用した資料の分類・タグ付け・検索フロー構築を伴走。毎日20〜30分かかっていた人力検索が数分で済むようになり、月約10時間の工数削減と過去の知見の再活用につながりました。</p>
           <div class="wf-meta"><span>ナレッジ/属人化解消</span><span>AI検索基盤</span></div>
           <p class="wf-time">実装支援　2セッション / 計2h　※無料テキスト相談・有償事後サポート別途</p>
         </div>
@@ -1199,7 +1351,7 @@
       <div class="work-mini" tabindex="0" role="button" aria-label="大手HD ヘルスケア部門 メール業務自動化 属人化解消">
         <span class="work-mini-industry">Healthcare / 個人依頼</span>
         <div class="work-mini-title">大手HD ヘルスケア部門<br>メール業務自動化・属人化解消</div>
-        <p class="work-mini-desc">暗黙知のCC判断ルールをGAS化。メール作成・送信の手作業と誤送信リスクを削減しました。</p>
+        <p class="work-mini-desc">月300通・約50時間分のメール作成をGASで自動化。暗黙知のCC判断もルール化し誤送信リスクを排除。</p>
         <div class="work-mini-foot">
           <span class="work-mini-time">実装支援 <b>計1h</b></span>
           <span class="work-mini-more">詳細</span>
@@ -1212,7 +1364,7 @@
           <h4>課題</h4>
           <p>組織図PDFの視認性が低く更新頻度も高い。社員元帳CSVのメアドに誤りが混在。To/CC判断ルールが担当者の暗黙知に依存しており、大量メールの手動作成・送信に多大な工数と誤送信リスクが生じていた。</p>
           <h4>支援内容</h4>
-          <p>外部AI・外部API不使用のGoogle Workspace完結型で解決。CCルールのSheet化（暗黙知の文書化）、GASによるメアド自動検証・CC自動判定・Gmail一括送信スクリプトを構築。担当者の手作業を最小化しました。</p>
+          <p>外部AI・外部API不使用のGoogle Workspace完結型で解決。CCルールのSheet化（暗黙知の文書化）、GASによるメアド自動検証・CC自動判定・Gmail一括送信スクリプトを構築。月300通・1通あたり約10分かかっていたメール作成（月約50時間分）を自動化し、担当者の手作業を最小化しました。</p>
           <div class="wf-meta"><span>個人依頼</span><span>メール業務自動化</span><span>Google Apps Script</span></div>
           <p class="wf-time">実装支援　1セッション / 計1h　※無料テキスト相談・有償事後サポート別途</p>
         </div>
@@ -1258,6 +1410,7 @@
         </div>
       </div>
 
+      </div>
     </div>
   </div>
 </section>
@@ -1435,11 +1588,44 @@
     <div class="profile-body reveal">
       <p>事業の戦略と現場をAIでつなぐ AI-BizOps の役割を、個人・小規模チーム向けに担う。海外での新ブランド立ち上げ（初年度30億・3カ国展開）や成熟ブランドの再成長（売上+170%）、MMM自動化・経営報告の自動化など、データで意思決定を動かしてきた経験が背景。自動化はあくまで手段、成果につながる業務を設計することが仕事。</p>
       <p>「間合い」の哲学を仕事の軸に置き、クライアントそれぞれのタイミングと状況に寄り添いながら、最小限のリソースで最大限の成果を生み出すことを追求しています。</p>
+      <p class="profile-sns">AI活用の実務ネタを毎日発信しています：<a href="https://note.com/maai_tech" target="_blank" rel="noopener">note（毎日更新）</a>／<a href="https://x.com/maai_tech_info" target="_blank" rel="noopener">X @maai_tech_info</a></p>
     </div>
   </div>
 </section>
 
 <!-- ── CONTACT ── -->
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="section-title reveal">よくあるご質問</h2>
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>料金はどのくらいかかりますか？</summary>
+      <p class="faq-a">メールでのご相談とお見積もりまでは無料です。Google Meetでの相談・実装から有料（¥10,000/時・分単位精算）で、かかった時間だけのご請求です。月次の伴走支援は業務範囲に応じてお見積もりします。</p>
+    </details>
+    <details class="faq-item">
+      <summary>遠方ですが対応できますか？</summary>
+      <p class="faq-a">全国対応しています。ご相談から実装まですべてリモート（メール・Google Meet）で完結するため、地域による差はありません。</p>
+    </details>
+    <details class="faq-item">
+      <summary>社内にITに詳しい人がいなくても大丈夫ですか？</summary>
+      <p class="faq-a">大丈夫です。支援先の多くが「ITに詳しい人がいない」状態から始まっています。専門用語を使わず、導入して終わりではなく、現場が自分たちで使い続けられる形になるまで伴走します。</p>
+    </details>
+    <details class="faq-item">
+      <summary>相談の前に何を準備すればいいですか？</summary>
+      <p class="faq-a">特別な準備は不要です。いま使っているツールの名前（Excel・Gmail・会計ソフトなど）と、時間がかかっている作業のメモがあれば十分です。何から手をつけるかを整理するところからご一緒します。</p>
+    </details>
+    <details class="faq-item">
+      <summary>社内データを外部に出せないのですが。</summary>
+      <p class="faq-a">ご要望に応じて秘密保持契約（NDA）を締結します。また、外部AIや外部APIを使わずGoogle Workspace内で完結させる構成など、データを外に出さない設計での支援実績があります。</p>
+    </details>
+    <details class="faq-item">
+      <summary>ごく小さな相談でもいいですか？</summary>
+      <p class="faq-a">「この作業、AIでなんとかなる？」の一言で構いません。初回のテキスト相談は無料です。AIを使わない方が良い場合は、その旨をはっきりお伝えします。</p>
+    </details>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <p class="section-label reveal" style="justify-content:center;">Contact</p>
   <h2 class="section-title reveal">まず、話だけでも。</h2>
@@ -1493,6 +1679,10 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">Ma<span>AI</span>-tech</div>
+  <div class="footer-sns">
+    <a href="https://note.com/maai_tech" target="_blank" rel="noopener">note</a>
+    <a href="https://x.com/maai_tech_info" target="_blank" rel="noopener">X</a>
+  </div>
   <div>© 2026 MaAI-tech. All rights reserved.</div>
 </footer>
 
@@ -1530,19 +1720,74 @@
     ctaHideTargets.forEach(el => ctaObserver.observe(el));
   }
 
-  // ── Works marquee: duplicate cards for seamless loop + click to open modal ──
+  // ── Works: 自動で流れる＋矢印・スワイプ・ドラッグで手動操作もできるカルーセル ──
   const worksTrack = document.querySelector('.works-track');
   const workModal = document.getElementById('workModal');
   const workModalContent = document.getElementById('workModalContent');
 
   if (worksTrack) {
-    // duplicate the set once so the -50% scroll loops seamlessly
+    // duplicate the set once so the loop wraps seamlessly
     Array.from(worksTrack.children).forEach(card => {
       const clone = card.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       clone.dataset.clone = '1';
       worksTrack.appendChild(clone);
     });
+
+    const marquee = document.querySelector('.works-marquee');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let hoverPause = false;
+    let autoStopped = false; // 一度でも操作したら自動スクロールは再開しない
+
+    const cardStep = () => {
+      const card = worksTrack.querySelector('.work-mini');
+      return card ? card.getBoundingClientRect().width + 24 : 384;
+    };
+
+    marquee.addEventListener('pointerenter', () => { hoverPause = true; });
+    marquee.addEventListener('pointerleave', () => { hoverPause = false; });
+    ['wheel', 'touchstart', 'pointerdown'].forEach(ev =>
+      marquee.addEventListener(ev, () => { autoStopped = true; }, { passive: true }));
+
+    document.querySelector('.works-nav-prev').addEventListener('click', () => {
+      autoStopped = true;
+      marquee.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+    });
+    document.querySelector('.works-nav-next').addEventListener('click', () => {
+      autoStopped = true;
+      marquee.scrollBy({ left: cardStep(), behavior: 'smooth' });
+    });
+
+    // ジャンプボタン：見たい実績カードへ直行
+    const jumpButtons = document.querySelectorAll('.works-jump button');
+    const originals = Array.from(worksTrack.querySelectorAll('.work-mini')).filter(c => !c.dataset.clone);
+    jumpButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        autoStopped = true;
+        const card = originals[Number(btn.dataset.work)];
+        if (!card) return;
+        jumpButtons.forEach(b => b.classList.toggle('active', b === btn));
+        const pad = parseFloat(getComputedStyle(worksTrack).paddingLeft) || 0;
+        marquee.scrollTo({ left: Math.max(card.offsetLeft - pad, 0), behavior: 'smooth' });
+      });
+    });
+
+    // 自動スクロール（約36px/s・操作するまで）＋ 複製セット境界でのシームレスなループ
+    let lastTime = performance.now();
+    const tick = (now) => {
+      const dt = Math.min(now - lastTime, 100);
+      lastTime = now;
+      if (!hoverPause && !autoStopped && !reduceMotion && !document.hidden) {
+        marquee.scrollLeft += dt * 0.036;
+      }
+      const half = worksTrack.scrollWidth / 2;
+      if (half > 0 && !autoStopped) {
+        if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+        else if (marquee.scrollLeft < 1) marquee.scrollLeft += half;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
 
     const openModal = (card) => {
       const full = card.querySelector('.work-full');
