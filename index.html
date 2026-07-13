@@ -19,9 +19,14 @@
 <meta property="og:description" content="個人・小規模チームのためのAI業務オペレーション支援。事業の戦略と現場をAIでつなぎ、意思決定を速め、業務を設計し直す。初回相談無料・分単位の明朗会計。">
 <meta property="og:site_name" content="MaAI-tech">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://maai-tech.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MaAI-tech｜あなたのビジネス、AIで回す。AI業務オペレーション支援（AI-BizOps）">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maai-tech.com/og-image.png">
 <meta name="twitter:title" content="MaAI-tech | あなたのビジネスを、AIで回す（AI-BizOps）">
 <meta name="twitter:description" content="個人・小規模チーム向けのAI業務オペレーション支援。事業の戦略と現場をAIでつなぎ、意思決定を速め、業務を設計し直す。初回相談無料・分単位の明朗会計。">
 <meta name="twitter:site" content="@maai_tech">
@@ -232,6 +237,29 @@
     color: var(--white);
   }
   .btn-primary::after { content: '→'; }
+  .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-fill {
+    background: var(--gold);
+    color: var(--white);
+  }
+  .btn-fill:hover { background: #9a7f52; border-color: #9a7f52; }
+
+  /* ── MOBILE FLOATING CTA ── */
+  .floating-cta {
+    display: none;
+    position: fixed;
+    left: 16px; right: 16px; bottom: 16px;
+    z-index: 150;
+    padding: 16px 24px;
+    background: var(--gold);
+    color: var(--white);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(15,15,15,0.25);
+  }
 
   /* ── SECTION BASE ── */
   section { padding: 120px 60px; }
@@ -973,6 +1001,10 @@
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; }
     .flow-note { flex-direction: column; gap: 12px; }
     .hero-ghost-mark { display: none; }
+    .hero-title { font-size: clamp(28px, 9.6vw, 44px); }
+    .hero-title-en { font-size: clamp(30px, 9.6vw, 48px); }
+    .floating-cta { display: block; }
+    .floating-cta.hidden { display: none; }
   }
 </style>
 </head>
@@ -1034,7 +1066,10 @@
       成果につながる形にします。自動化はその手段の一つ。<br>
       単発の実装から、月次で伴走する顧問まで。
     </p>
-    <a href="#flow" class="btn-primary">ご利用の流れ</a>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary btn-fill">無料で相談する</a>
+      <a href="#flow" class="btn-primary">ご利用の流れ</a>
+    </div>
   </div>
 </section>
 
@@ -1461,6 +1496,8 @@
   <div>© 2026 MaAI-tech. All rights reserved.</div>
 </footer>
 
+<a href="#contact" class="floating-cta" id="floatingCta">無料で相談する →</a>
+
 <script>
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
@@ -1480,6 +1517,18 @@
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // 追従CTA：ヒーロー（CTAボタンあり）とフォームが見えている間は隠す
+  const floatingCta = document.getElementById('floatingCta');
+  const ctaHideTargets = [document.querySelector('.hero'), document.getElementById('contact')].filter(Boolean);
+  if (floatingCta && ctaHideTargets.length) {
+    const ctaVisibleSet = new Set();
+    const ctaObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => e.isIntersecting ? ctaVisibleSet.add(e.target) : ctaVisibleSet.delete(e.target));
+      floatingCta.classList.toggle('hidden', ctaVisibleSet.size > 0);
+    }, { threshold: 0.1 });
+    ctaHideTargets.forEach(el => ctaObserver.observe(el));
+  }
 
   // ── Works marquee: duplicate cards for seamless loop + click to open modal ──
   const worksTrack = document.querySelector('.works-track');
