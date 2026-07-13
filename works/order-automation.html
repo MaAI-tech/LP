@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飲食店の受発注を自動化した事例｜地域密着イタリアン — 人手不足を業務設計で乗り越える｜MaAI-tech</title>
+<meta name="description" content="ピザ職人の人手不足に悩む飲食店で、受発注フローを完全自動化。さらに構築した流通基盤を活かした新規事業の立ち上げまで伴走した事例です。">
+<link rel="canonical" href="https://maai-tech.com/works/order-automation.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://maai-tech.com/works/order-automation.html">
+<meta property="og:title" content="飲食店の受発注を自動化した事例｜地域密着イタリアン — 人手不足を業務設計で乗り越える｜MaAI-tech">
+<meta property="og:description" content="ピザ職人の人手不足に悩む飲食店で、受発注フローを完全自動化。さらに構築した流通基盤を活かした新規事業の立ち上げまで伴走した事例です。">
+<meta property="og:site_name" content="MaAI-tech">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://maai-tech.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maai-tech.com/og-image.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCBB82KF1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JCBB82KF1Y');
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0F0F0F; --white:#FFFFFF; --gold:#B89A6A; --gold-l:#D4BC94; --mid:#555555; --light:#AAAAAA; --ghost:#F7F5F1; --border:#E8E4DC; }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Poppins',sans-serif; background:var(--white); color:var(--ink); }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:18px 32px; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .nav-wordmark { font-family:'Lora',serif; font-size:18px; color:var(--ink); text-decoration:none; letter-spacing:0.02em; }
+  .nav-wordmark span { color:var(--gold); font-family:'Poppins',sans-serif; font-weight:500; }
+  .nav-cta { padding:9px 20px; border:1px solid var(--gold); color:var(--gold); font-size:12px; letter-spacing:0.12em; text-decoration:none; transition:background 0.3s,color 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--white); }
+  main { max-width:760px; margin:0 auto; padding:130px 24px 80px; }
+  .crumb { font-size:12px; letter-spacing:0.08em; margin-bottom:36px; }
+  .crumb a { color:var(--light); text-decoration:none; }
+  .crumb a:hover { color:var(--gold); }
+  .industry { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px; }
+  h1 { font-family:'Noto Serif JP',serif; font-size:clamp(26px,5vw,38px); font-weight:600; line-height:1.5; margin-bottom:10px; }
+  .client { font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; color:var(--mid); margin-bottom:8px; }
+  .scale { font-size:12px; color:var(--gold); letter-spacing:0.06em; margin-bottom:40px; }
+  h2 { font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; letter-spacing:0.08em; margin:36px 0 14px; padding-left:12px; border-left:3px solid var(--gold); }
+  p, li { font-family:'Noto Serif JP',serif; font-size:14.5px; font-weight:300; color:var(--mid); line-height:2.1; }
+  ul { padding-left:1.4em; }
+  li { margin-bottom:6px; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:36px; padding-top:22px; border-top:1px solid var(--border); }
+  .tags span { padding:5px 12px; border:1px solid var(--border); font-size:10px; letter-spacing:0.1em; color:var(--light); }
+  .cta { margin-top:48px; background:var(--ghost); border-top:3px solid var(--gold); padding:36px 32px; text-align:center; }
+  .cta p { margin-bottom:20px; }
+  .cta a { display:inline-block; padding:14px 40px; background:var(--gold); color:var(--white); font-size:13px; letter-spacing:0.15em; text-decoration:none; transition:background 0.3s; }
+  .cta a:hover { background:#9a7f52; }
+  .other { margin-top:40px; font-size:13px; }
+  .other a { color:var(--gold); text-decoration:none; }
+  .other a:hover { text-decoration:underline; }
+  footer { background:var(--ink); color:rgba(255,255,255,0.3); padding:32px 24px; text-align:center; font-size:12px; letter-spacing:0.08em; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-wordmark">Ma<span>AI</span>-tech</a>
+  <a href="/#contact" class="nav-cta">無料で相談する</a>
+</nav>
+<main>
+  <p class="crumb"><a href="/">トップ</a> ／ <a href="/#works">支援実績</a> ／ 本事例</p>
+  <span class="industry">F&B / Local Restaurant</span>
+  <h1>受発注の自動化と業務の再設計</h1>
+  <p class="client">地域密着イタリアン</p>
+  <p class="scale">実装支援 2セッション / 計2h</p>
+
+  <h2>課題</h2>
+  <p>アルバイトの入れ替わりでピザ職人が不足。生地の工場生産で半オートメーション化を実現したものの、受発注業務が引き続き人力で残っていた。さらにその流通基盤を活かした事業展開も模索中だった。</p>
+
+  <h2>支援内容</h2>
+  <p>AIを活用した受発注フローの完全自動化を設計・構築支援。人的コストを削減しつつ、構築した流通システムを応用したアパレルブランド展開まで伴走しました。</p>
+
+  <h2>結果</h2>
+  <ul>
+    <li>受発注の人力対応をゼロに</li>
+    <li>既存の流通基盤を再利用して新規事業（アパレル展開）を立ち上げ</li>
+    <li>「人が辞めると回らない」状態から、仕組みで回る状態へ</li>
+  </ul>
+
+  <h2>こんな方に近い事例です</h2>
+  <ul>
+    <li>人手不足で毎日の定型業務が回らなくなりつつある</li>
+    <li>いまの設備・仕組みを他の事業にも活かせないかと考えている</li>
+  </ul>
+
+  <div class="tags"><span>業務自動化</span><span>事業再設計</span><span>飲食店</span></div>
+
+  <div class="cta">
+    <p>似た課題をお持ちですか？ 内容の確認とお見積もりまでは無料です。<br>「この作業、AIでなんとかなる？」の一言で構いません。</p>
+    <a href="/#contact">無料で相談する →</a>
+  </div>
+
+  <p class="other">→ <a href="/#works">ほかの支援実績を見る</a></p>
+</main>
+<footer>© 2026 MaAI-tech. All rights reserved.</footer>
+</body>
+</html>

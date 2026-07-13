@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社内ナレッジをAIで横断検索できるようにした事例｜調査会社 — 毎日20〜30分の資料探しを削減｜MaAI-tech</title>
+<meta name="description" content="紙・Excel・PDFに散在した過去の調査資料を、AIで横断検索できるナレッジ基盤に。毎日20〜30分かかっていた人力検索が数分になり、月約10時間を削減した事例です。">
+<link rel="canonical" href="https://maai-tech.com/works/knowledge-search.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://maai-tech.com/works/knowledge-search.html">
+<meta property="og:title" content="社内ナレッジをAIで横断検索できるようにした事例｜調査会社 — 毎日20〜30分の資料探しを削減｜MaAI-tech">
+<meta property="og:description" content="紙・Excel・PDFに散在した過去の調査資料を、AIで横断検索できるナレッジ基盤に。毎日20〜30分かかっていた人力検索が数分になり、月約10時間を削減した事例です。">
+<meta property="og:site_name" content="MaAI-tech">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://maai-tech.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maai-tech.com/og-image.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCBB82KF1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JCBB82KF1Y');
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0F0F0F; --white:#FFFFFF; --gold:#B89A6A; --gold-l:#D4BC94; --mid:#555555; --light:#AAAAAA; --ghost:#F7F5F1; --border:#E8E4DC; }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Poppins',sans-serif; background:var(--white); color:var(--ink); }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:18px 32px; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .nav-wordmark { font-family:'Lora',serif; font-size:18px; color:var(--ink); text-decoration:none; letter-spacing:0.02em; }
+  .nav-wordmark span { color:var(--gold); font-family:'Poppins',sans-serif; font-weight:500; }
+  .nav-cta { padding:9px 20px; border:1px solid var(--gold); color:var(--gold); font-size:12px; letter-spacing:0.12em; text-decoration:none; transition:background 0.3s,color 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--white); }
+  main { max-width:760px; margin:0 auto; padding:130px 24px 80px; }
+  .crumb { font-size:12px; letter-spacing:0.08em; margin-bottom:36px; }
+  .crumb a { color:var(--light); text-decoration:none; }
+  .crumb a:hover { color:var(--gold); }
+  .industry { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px; }
+  h1 { font-family:'Noto Serif JP',serif; font-size:clamp(26px,5vw,38px); font-weight:600; line-height:1.5; margin-bottom:10px; }
+  .client { font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; color:var(--mid); margin-bottom:8px; }
+  .scale { font-size:12px; color:var(--gold); letter-spacing:0.06em; margin-bottom:40px; }
+  h2 { font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; letter-spacing:0.08em; margin:36px 0 14px; padding-left:12px; border-left:3px solid var(--gold); }
+  p, li { font-family:'Noto Serif JP',serif; font-size:14.5px; font-weight:300; color:var(--mid); line-height:2.1; }
+  ul { padding-left:1.4em; }
+  li { margin-bottom:6px; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:36px; padding-top:22px; border-top:1px solid var(--border); }
+  .tags span { padding:5px 12px; border:1px solid var(--border); font-size:10px; letter-spacing:0.1em; color:var(--light); }
+  .cta { margin-top:48px; background:var(--ghost); border-top:3px solid var(--gold); padding:36px 32px; text-align:center; }
+  .cta p { margin-bottom:20px; }
+  .cta a { display:inline-block; padding:14px 40px; background:var(--gold); color:var(--white); font-size:13px; letter-spacing:0.15em; text-decoration:none; transition:background 0.3s; }
+  .cta a:hover { background:#9a7f52; }
+  .other { margin-top:40px; font-size:13px; }
+  .other a { color:var(--gold); text-decoration:none; }
+  .other a:hover { text-decoration:underline; }
+  footer { background:var(--ink); color:rgba(255,255,255,0.3); padding:32px 24px; text-align:center; font-size:12px; letter-spacing:0.08em; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-wordmark">Ma<span>AI</span>-tech</a>
+  <a href="/#contact" class="nav-cta">無料で相談する</a>
+</nav>
+<main>
+  <p class="crumb"><a href="/">トップ</a> ／ <a href="/#works">支援実績</a> ／ 本事例</p>
+  <span class="industry">Research / Mid-size</span>
+  <h1>社内資料のAI横断検索基盤を構築</h1>
+  <p class="client">中規模調査会社</p>
+  <p class="scale">実装支援 2セッション / 計2h</p>
+
+  <h2>課題</h2>
+  <p>過去の調査資料が紙媒体中心で散在。一時期ExcelやPDFでデジタル化を試みたものの乱雑化し、過去の類似調査を探す作業がすべて人力になっていた。</p>
+
+  <h2>支援内容</h2>
+  <p>散在する紙・Excel・PDFを横断的に検索できる社内ナレッジ基盤の設計を支援。AIを活用した資料の分類・タグ付け・検索フロー構築を伴走しました。</p>
+
+  <h2>結果</h2>
+  <ul>
+    <li>毎日20〜30分かかっていた資料探しが数分に（月約10時間の削減）</li>
+    <li>過去の知見を再活用できる形になり、類似調査の立ち上がりが速くなった</li>
+    <li>「あの資料どこ？」が特定の人に集中する属人化を解消</li>
+  </ul>
+
+  <h2>こんな方に近い事例です</h2>
+  <ul>
+    <li>過去の資料やノウハウが人の記憶頼みになっている</li>
+    <li>ファイルサーバーやドライブが散らかっていて検索で見つからない</li>
+  </ul>
+
+  <div class="tags"><span>ナレッジ基盤</span><span>属人化解消</span><span>AI検索</span></div>
+
+  <div class="cta">
+    <p>似た課題をお持ちですか？ 内容の確認とお見積もりまでは無料です。<br>「この作業、AIでなんとかなる？」の一言で構いません。</p>
+    <a href="/#contact">無料で相談する →</a>
+  </div>
+
+  <p class="other">→ <a href="/#works">ほかの支援実績を見る</a></p>
+</main>
+<footer>© 2026 MaAI-tech. All rights reserved.</footer>
+</body>
+</html>
